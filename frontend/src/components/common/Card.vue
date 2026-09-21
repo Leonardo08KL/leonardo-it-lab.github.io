@@ -1,0 +1,1 @@
+/DesktopView.vue/AboutView.vue/ProjectsView.vue/SkillsView.vue/NetworkView.vue/LinuxView.vue/HardwareView.vue/CVView.vue/ContactView.vue

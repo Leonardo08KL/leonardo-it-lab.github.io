@@ -1,0 +1,63 @@
+const API_BASE_URL = '/api'
+
+const request = async (
+    endpoint,
+    options = {}
+) => {
+    const response = await fetch(
+        `${API_BASE_URL}${endpoint}`,
+        {
+            headers: {
+                'Content-Type': 'application/json',
+                ...options.headers
+            },
+            ...options
+        }
+    )
+
+    if (!response.ok) {
+        throw new Error(
+            `API Error: ${response.status} ${response.statusText}`
+        )
+    }
+
+    const contentType =
+        response.headers.get('content-type')
+
+    if (
+        contentType &&
+        contentType.includes('application/json')
+    ) {
+        return response.json()
+    }
+
+    return response.text()
+}
+
+export const api = {
+    get(endpoint) {
+        return request(endpoint, {
+            method: 'GET'
+        })
+    },
+
+    post(endpoint, data = {}) {
+        return request(endpoint, {
+            method: 'POST',
+            body: JSON.stringify(data)
+        })
+    },
+
+    put(endpoint, data = {}) {
+        return request(endpoint, {
+            method: 'PUT',
+            body: JSON.stringify(data)
+        })
+    },
+
+    delete(endpoint) {
+        return request(endpoint, {
+            method: 'DELETE'
+        })
+    }
+}

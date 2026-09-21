@@ -1,0 +1,1 @@
+<SkillGroup v-for="(skills, category) in skills" :key="category" :title="category" :skills="skills" />
