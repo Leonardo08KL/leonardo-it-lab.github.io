@@ -28,5 +28,294 @@
         "terminal": "Terminal de comandos",
         "network": "Laboratorio de redes",
         "hardware": "Soporte y mantenimiento"
+    },
+    "about": {
+        "title": "Acerca de mí",
+        "description": "Portafolio técnico interactivo diseñado para mostrar conocimientos prácticos en programación, redes, infraestructura y soporte TI.",
+        "position": "Desarrollador Junior / Soporte TI",
+        "focus-areas": "Áreas de enfoque",
+        "contact": "Contacto",
+        "contact-description": "Si deseas contactarme, puedes hacerlo a través de los siguientes medios:",
+        "email-contact": "Correo electrónico",
+        "form-contact": "Formulario de contacto",
+        "message-sent": "¡Mensaje enviado con éxito!",
+        "message-error": "Error al enviar el mensaje. Por favor, inténtalo de nuevo más tarde.",
+        "form": {
+            "name": "Nombre",
+            "placeholder-name": "Tu nombre",
+            "email": "Correo electrónico",
+            "placeholder-email": "tu correo electrónico",
+            "message": "Mensaje",
+            "placeholder-message": "Escribe tu mensaje...",
+            "subject": "Asunto",
+            "placeholder-subject": "Asunto del mensaje",
+            "send": "Enviar",
+            "sending": "Enviando..."
+        }
+    },
+    "highlights": {
+        "title": "Aspectos destacados",
+        "description": "Estos son algunos de los aspectos más destacados de mi experiencia y habilidades en el campo de la tecnología y el desarrollo.",
+        "skills": {
+            "title": "Habilidades",
+            "description": "Conjunto de habilidades técnicas y conocimientos adquiridos a lo largo de mi carrera."
+        },
+        "projects": {
+            "title": "Proyectos",
+            "description": "Proyectos de desarrollo que demuestran mi capacidad para crear soluciones efectivas."
+        },
+        "experience": {
+            "title": "Experiencia",
+            "description": "Experiencia laboral y proyectos anteriores que respaldan mi trayectoria profesional."
+        },
+        "highlights-focus": {
+            "Development": {
+                "title": "Desarrollo Web",
+                "description": "Aplicaciones web y desarrollo frontend."
+            },
+            "IT-Support": {
+                "title": "Soporte TIC",
+                "description": "Diagnóstico y mantenimiento de equipos."
+            },
+            "Networks": {
+                "title": "Redes",
+                "description": "Configuración y administración de redes."
+            },
+            "Infrastructure": {
+                "title": "Infraestructura",
+                "description": "Implementación y gestión de infraestructura tecnológica."
+            }
+        }
+    },
+    "cv": {
+        "title": "Currículum",
+        "description": "Currículum profesional que destaca mi experiencia, habilidades y logros en el campo de la tecnología y el desarrollo.",
+        "download": "Descargar CV",
+        "profile": {
+            "title": "Perfil",
+            "description": "Desarrollador backend con experiencia profesional en desarrollo e integración de APIs REST y SOAP, aplicaciones empresariales ymantenimiento de sistemas en producción. Experiencia con Java, Spring Boot, PHP, Laravel y bases de datos SQL/NoSQL. Conocimientos enfacturación electrónica CFDI, autenticación, integración de sistemas, Git, Docker, Jenkins, Linux, Postman y Swagger."
+        },
+        "technical-areas": {
+            "title": "Áreas Técnicas",
+            "description": "Conjunto de áreas técnicas en las que tengo experiencia y conocimientos."
+        },
+        "technologies": {
+            "title": "Tecnologías",
+            "description": "Conjunto de tecnologías y herramientas que utilizo en mi trabajo diario."
+        },
+        "education": {
+            "title": "Educación",
+            "description": "Formación académica y certificaciones obtenidas en el campo de la tecnología y el desarrollo.",
+            "degrees": {
+                "title": "Grados",
+                "description": "Grados académicos obtenidos en instituciones educativas reconocidas.",
+                "ing": "Ingeniería en Sistemas Computacionales",
+                "tec": "Técnico en Programación"
+            }
+        },
+        "experience": {
+            "title": "Experiencia",
+            "description": "Experiencia laboral y proyectos anteriores que respaldan mi trayectoria profesional.",
+            "experience-list": {
+                "title": "Lista de Experiencia",
+                "description": "Lista de experiencias laborales y proyectos anteriores que respaldan mi trayectoria profesional.",
+                "experience-1": {
+                    "company": "FLensa",
+                    "position": "Desarrollador Backend",
+                    "description": "Desarrollo e integración de APIs REST y SOAP, mantenimiento de sistemas en producción.",
+                    "date": "Enero 2025 - Junio 2026",
+                    "worked-on": [
+                        "Desarrollé e integré APIs REST y SOAP para la interconexión de sistemas empresariales, facilitando el intercambio de información entre aplicaciones.",
+                        "Desarrollé y mantuve aplicaciones empresariales utilizando Java, Spring Boot, PHP y Laravel, implementando nuevas funcionalidades y atendiendo requerimientos de negocio.",
+                        "Implementé funcionalidades relacionadas con facturación electrónica CFDI, proporcionando soporte a procesos empresariales para la generación y gestión de comprobantes.",
+                        "Diseñé y modelé bases de datos relacionales y NoSQL, estructurando la información requerida por las aplicaciones y sus funcionalidades.",
+                        "Implementé mecanismos de autenticación y autorización en aplicaciones web, controlando el acceso a información y funcionalidades.",
+                        "Resolví bugs y realicé mantenimiento evolutivo en aplicaciones en producción, contribuyendo a la continuidad operativa de los sistemas.",
+                        "Analicé requerimientos directamente con usuarios y los transformé en funcionalidades de software orientadas a atender necesidades del negocio.",
+                        "Integré sistemas de control de acceso mediante datos biométricos, incorporando mecanismos de identificación a los procesos empresariales.",
+                        "Documenté código y funcionalidades, facilitando el mantenimiento y la comprensión de las aplicaciones por parte del equipo.",
+                        "Atendí y di seguimiento a tickets de soporte, diagnosticando y resolviendo incidencias relacionadas con aplicaciones empresariales."
+                    ]
+                },
+                "experience-2": {
+                    "company": "ks",
+                    "position": "Practicante de Infraestructura",
+                    "description": "Desarrollo e integración de APIs REST y SOAP, mantenimiento de sistemas en producción.",
+                    "date": "Junio 2024 - Diciembre 2024",
+                    "worked-on": [
+                        "Administré bases de datos SQL Server, MySQL y MariaDB, realizando consultas, actualizaciones y tareas de mantenimiento para sistemas empresariales.",
+                        "Desarrollé e integré proyectos internos orientados a optimizar procesos operativos de la organización.",
+                        "Diseñé y ejecuté pruebas de software, validando el funcionamiento de nuevas funcionalidades antes de su implementación.",
+                        "Diseñé interfaces web responsivas, adaptando las aplicaciones a diferentes dispositivos y tamaños de pantalla.",
+                        "Diagnostiqué problemas de conectividad en redes LAN/WAN, utilizando herramientas como ping, tracert/traceroute, ipconfig/ifconfig y nslookup.",
+                        "Administré y configuré servidores Windows y Linux, incluyendo servicios como Active Directory, DNS, DHCP, FTP y servidores web.",
+                        "Implementé medidas de seguridad en sistemas y redes, incluyendo firewalls, antivirus y políticas de acceso."
+                    ]
+                }
+            }
+        },
+        "skills": {
+            "title": "Habilidades",
+            "description": "Conjunto de habilidades técnicas y conocimientos adquiridos a lo largo de mi carrera."
+        }
+    },
+    "technicalSkills": {
+        "title": "Habilidades Técnicas",
+        "description": "Conjunto de habilidades técnicas y conocimientos adquiridos a lo largo de mi carrera en el campo de la tecnología y el desarrollo.",
+        "languages": "Lenguajes",
+        "backend": "Backend",
+        "databases": "Bases de Datos",
+        "webDevelopment": "Desarrollo Web",
+        "devops": "DevOps",
+        "tools": "Herramientas",
+        "methodologies": "Metodologías"
+    },
+    "lenguages": {
+        "title": "Idiomas",
+        "description": "Conjunto de idiomas que domino y mi nivel de competencia en cada uno de ellos.",
+        "spanish": {
+            "title": "Español",
+            "level": "Nativo",
+            "description": "Idioma nativo, con fluidez en comunicación oral y escrita."
+        },
+        "english": {
+            "title": "Inglés",
+            "level": "Intermedio",
+            "description": "Nivel intermedio, con capacidad para comprender y comunicarme en situaciones cotidianas y profesionales."
+        }
+    },
+    "linux": {
+        "title": "Laboratorio Linux",
+        "description": "Laboratorio de Linux para la práctica y experimentación con sistemas operativos basados en Linux.",
+        "admin": {
+            "title": "Administración",
+            "description": "Sección dedicada a la administración y configuración de sistemas Linux."
+        },
+        "terminal": {
+            "title": "Terminal",
+            "description": "Administración mediante línea de comandos."
+        },
+        "services": {
+            "title": "Servicios",
+            "description": "Gestión de servicios mediante systemd."
+        },
+        "security": {
+            "title": "Seguridad",
+            "description": "Usuarios, permisos y configuración básica."
+        },
+        "monitoring": {
+            "title": "Monitoreo",
+            "description": "Supervisión de procesos y recursos."
+        },
+        "storage": {
+            "title": "Almacenamiento",
+            "description": "Discos, particiones y sistemas de archivos."
+        },
+        "networking": {
+            "title": "Redes",
+            "description": "Configuración y diagnóstico de interfaces."
+        },
+        "commands": {
+            "title": "Comandos",
+            "description": "Lista de comandos útiles para la administración y configuración de sistemas Linux."
+        }
+    },
+    "network-lab": {
+        "title": "Laboratorio de Redes",
+        "description": "Laboratorio de redes para la práctica y experimentación con configuraciones y diagnósticos de redes.",
+        "topology": {
+            "title": "Topología de Red",
+            "description": "Visualización de la topología de red y el estado de los dispositivos conectados."
+        },
+        "tools": {
+            "title": "Herramientas de Red",
+            "description": "Conjunto de herramientas para el diagnóstico y análisis de redes.",
+            "tools-list": {
+                "ping": {
+                    "title": "Ping",
+                    "description": "Herramienta para verificar la conectividad entre dispositivos en una red."
+                },
+                "traceroute": {
+                    "title": "Traceroute",
+                    "description": "Herramienta para rastrear la ruta que toman los paquetes para llegar a un host."
+                },
+                "nslookup": {
+                    "title": "NSLookup",
+                    "description": "Herramienta para consultar servidores DNS."
+                },
+                "dig": {
+                    "title": "Dig",
+                    "description": "Herramienta para consultar servidores DNS."
+                },
+                "whois": {
+                    "title": "Whois",
+                    "description": "Herramienta para consultar información de registro de dominios."
+                },
+                "nmap": {
+                    "title": "Nmap",
+                    "description": "Herramienta de escaneo de red para descubrir hosts y servicios."
+                }
+            }
+        }
+    },
+    "hardware": {
+        "title": "Laboratorio de Hardware",
+        "description": "Laboratorio de hardware para la práctica y experimentación con componentes y dispositivos de hardware.",
+        "components": {
+            "title": "Componentes de Hardware",
+            "description": "Sección dedicada a la exploración y análisis de componentes de hardware."
+        },
+        "support": {
+            "title": "Áreas de Soporte",
+            "description": "Sección dedicada al diagnóstico y reparación de dispositivos de hardware."
+        },
+        "notes": {
+            "title": "Notas de Diagnóstico",
+            "description": "El diagnóstico de hardware debe combinar la inspección física, el diagnóstico por software y la supervisión del sistema."
+        },
+        "supportAreas": [
+            "Mantenimiento preventivo",
+            "Diagnóstico de hardware",
+            "Reemplazo de componentes",
+            "Instalación del sistema operativo",
+            "Instalación de controladores",
+            "Solución de problemas de rendimiento"
+        ]
+    },
+    "projects": {
+        "title": "Proyectos",
+        "description": "Proyectos de desarrollo que demuestran mi capacidad para crear soluciones efectivas.",
+        "status": {
+            "inDevelopment": "En desarrollo",
+            "completed": "Completado",
+            "planned": "Planeado"
+        },
+        "items": {
+            "itLab": {
+                "name": "Leonardo IT Lab",
+                "category": "Portafolio / Infraestructura TI",
+                "description": "Portafolio interactivo desarrollado con Vue y Node.js para demostrar conocimientos de programación, soporte TI, redes e infraestructura."
+            },
+            "networkLab": {
+                "name": "Network Lab",
+                "category": "Redes",
+                "description": "Laboratorio interactivo para representar conceptos de redes, conectividad, direccionamiento IP y diagnóstico."
+            },
+            "linuxServer": {
+                "name": "Linux Home Server",
+                "category": "Infraestructura",
+                "description": "Proyecto orientado a la administración de un servidor Linux para servicios de red, archivos y aplicaciones."
+            },
+            "mediaServer": {
+                "name": "Media Server",
+                "category": "Servidores",
+                "description": "Implementación de un servidor para almacenamiento y administración de contenido dentro de una red local."
+            },
+            "itSupport": {
+                "name": "IT Support Lab",
+                "category": "Soporte Técnico",
+                "description": "Laboratorio enfocado en mantenimiento preventivo, diagnóstico de hardware, instalación de sistemas y solución de problemas."
+            }
+        }
     }
 }

@@ -60,10 +60,10 @@ export const applications = [
         description: 'appDescription.about',
         icon: User
     },
-    {
-        type: 'personal',
-        title: 'desktop.personal',
-        description: 'appDescription.personal',
-        icon: User
-    }
+    // {
+    //     type: 'personal',
+    //     title: 'desktop.personal',
+    //     description: 'appDescription.personal',
+    //     icon: User
+    // }
 ]

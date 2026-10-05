@@ -1,6 +1,6 @@
 export const education = [
     {
-        degree: 'Ingeniería en Sistemas Computacionales',
+        degree: 'cv.education.degrees.ing',
 
         institution:
             'Instituto Tecnológico Nacional de México, Campus Celaya',
@@ -16,7 +16,7 @@ export const education = [
     },
 
     {
-        degree: 'Técnico en Programación',
+        degree: 'cv.education.degrees.tec',
 
         institution: 'CBTis No. 172',
 

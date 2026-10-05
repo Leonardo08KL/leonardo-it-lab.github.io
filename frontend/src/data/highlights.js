@@ -16,26 +16,26 @@ import {
 export const highlights = [
 
     {
-        title: 'Development',
-        description: 'Aplicaciones web y desarrollo frontend.',
+        title: 'highlights.highlights-focus.Development.title',
+        description: 'highlights.highlights-focus.Development.description',
         icon: Code2
     },
 
     {
-        title: 'IT Support',
-        description: 'Diagnóstico y mantenimiento de equipos.',
+        title: 'highlights.highlights-focus.IT-Support.title',
+        description: 'highlights.highlights-focus.IT-Support.description',
         icon: Terminal
     },
 
     {
-        title: 'Networks',
-        description: 'Redes, conectividad y troubleshooting.',
+        title: 'highlights.highlights-focus.Networks.title',
+        description: 'highlights.highlights-focus.Networks.description',
         icon: Network
     },
 
     {
-        title: 'Infrastructure',
-        description: 'Sistemas Linux, Windows y servidores.',
+        title: 'highlights.highlights-focus.Infrastructure.title',
+        description: 'highlights.highlights-focus.Infrastructure.description',
         icon: Server
     }
 

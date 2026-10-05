@@ -10,7 +10,7 @@ import {
 
 export const technicalSkills = [
     {
-        title: 'Lenguajes',
+        title: 'technicalSkills.languages',
         icon: Code2,
         skills: [
             'Java',
@@ -22,19 +22,19 @@ export const technicalSkills = [
     },
 
     {
-        title: 'Backend',
+        title: 'technicalSkills.backend',
         icon: Server,
         skills: [
             'Spring Boot',
             'Laravel',
-            'APIs REST',
+            'REST APIs',
             'SOAP',
-            'Servicios Web'
+            'Web Services'
         ]
     },
 
     {
-        title: 'Bases de Datos',
+        title: 'technicalSkills.databases',
         icon: Database,
         skills: [
             'SQL Server',
@@ -42,13 +42,13 @@ export const technicalSkills = [
             'MariaDB',
             'PostgreSQL',
             'NoSQL',
-            'Procedimientos Almacenados',
-            'Modelado'
+            'Stored Procedures',
+            'Database Modeling'
         ]
     },
 
     {
-        title: 'Desarrollo Web',
+        title: 'technicalSkills.webDevelopment',
         icon: Globe,
         skills: [
             'HTML5',
@@ -58,7 +58,7 @@ export const technicalSkills = [
     },
 
     {
-        title: 'DevOps',
+        title: 'technicalSkills.devops',
         icon: GitBranch,
         skills: [
             'Git',
@@ -71,7 +71,7 @@ export const technicalSkills = [
     },
 
     {
-        title: 'Herramientas',
+        title: 'technicalSkills.tools',
         icon: Wrench,
         skills: [
             'Postman',
@@ -82,7 +82,7 @@ export const technicalSkills = [
     },
 
     {
-        title: 'Metodologías',
+        title: 'technicalSkills.methodologies',
         icon: ClipboardList,
         skills: [
             'Scrum',

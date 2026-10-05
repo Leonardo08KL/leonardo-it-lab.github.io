@@ -83,6 +83,13 @@
 
 <script setup>
 import WindowControls from './WindowControls.vue'
+import { useI18n } from 'vue-i18n'
+
+const { locale, t } = useI18n()
+
+const changeLanguage = () => {
+    locale.value = locale.value === 'es' ? 'en' : 'es'
+}
 
 const props = defineProps({
     title: {
@@ -136,7 +143,7 @@ const handleDoubleClick = () => {
             <component v-if="props.icon" :is="props.icon" :size="16" />
 
             <span>
-                {{ props.title }}
+                {{ t(props.title) }}
             </span>
         </div>
 

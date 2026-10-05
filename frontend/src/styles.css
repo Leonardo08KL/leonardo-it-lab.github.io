@@ -2,8 +2,10 @@
    GLOBAL
 ========================================= */
 
-* {
-    /* box-sizing: border-box; */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
 }
 
 html,
@@ -12,10 +14,18 @@ body,
     width: 100%;
     height: 100%;
     margin: 0;
+    padding: 0;
+}
+
+html {
+    overflow: hidden;
 }
 
 body {
     overflow: hidden;
+
+    margin: 0;
+    padding: 0;
 
     background: #020617;
     color: #e2e8f0;
@@ -42,9 +52,4 @@ button:focus-visible,
 input:focus-visible {
     outline: 2px solid #60a5fa;
     outline-offset: 2px;
-}
-
-.animationMain {
-    animation:
-        highlightAppear 0.55s ease forwards;
 }

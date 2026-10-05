@@ -11,31 +11,35 @@ const emit = defineEmits([
     'dns',
     'ports',
     'scan'
-])
+]);
+
+import { useI18n } from 'vue-i18n'
+
+const { locale, t } = useI18n();
 
 const tools = [
     {
         id: 'ping',
-        title: 'Ping',
-        description: 'Test de conectividad',
+        title: 'network-lab.tools.tools-list.ping.title',
+        description: 'network-lab.tools.tools-list.ping.description',
         icon: Activity
     },
     {
         id: 'dns',
-        title: 'DNS Lookup',
-        description: 'Consultar resolución DNS',
+        title: 'network-lab.tools.tools-list.dns.title',
+        description: 'network-lab.tools.tools-list.dns.description',
         icon: Globe
     },
     {
         id: 'ports',
-        title: 'Port Check',
-        description: 'Comprobar puertos',
+        title: 'network-lab.tools.tools-list.ports.title',
+        description: 'network-lab.tools.tools-list.ports.description',
         icon: Server
     },
     {
         id: 'scan',
-        title: 'Network Scan',
-        description: 'Analizar red local',
+        title: 'network-lab.tools.tools-list.scan.title',
+        description: 'network-lab.tools.tools-list.scan.description',
         icon: Wifi
     }
 ]
@@ -49,17 +53,21 @@ defineProps({
         type: Boolean,
         default: false
     }
-})
+});
+
+const changeLanguage = () => {
+    locale.value = locale.value === 'es' ? 'en' : 'es'
+}
 </script>
 
 <template>
     <section class="network-tools">
         <div class="tools-header">
             <span class="section-label">
-                NETWORK TOOLS
+                {{ t('network-lab.tools.title') }}
             </span>
 
-            <h3>Diagnostic Tools</h3>
+            <h3>{{ t('network-lab.tools.description') }}</h3>
         </div>
 
         <div class="tools-grid">
@@ -70,8 +78,8 @@ defineProps({
                 </div>
 
                 <div class="tool-information">
-                    <strong>{{ tool.title }}</strong>
-                    <span>{{ tool.description }}</span>
+                    <strong>{{ t(tool.title) }}</strong>
+                    <span>{{ t(tool.description) }}</span>
                 </div>
             </button>
         </div>

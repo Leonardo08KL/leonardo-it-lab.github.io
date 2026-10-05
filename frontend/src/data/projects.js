@@ -1,11 +1,17 @@
+import {
+    Network,
+    PenTool,
+    User,
+    ProjectorIcon
+} from 'lucide-vue-next'
+
 export const projects = [
     {
         id: 1,
-        name: 'Leonardo IT Lab',
-        category: 'Portfolio / IT Infrastructure',
-        icon: '🖥️',
-        description:
-            'Portafolio interactivo desarrollado con Vue y Node.js para demostrar conocimientos de programación, soporte TI, redes e infraestructura.',
+        name: 'projects.items.itLab.name',
+        category: 'projects.items.itLab.category',
+        icon: ProjectorIcon,
+        description: 'projects.items.itLab.description',
         technologies: [
             'Vue 3',
             'JavaScript',
@@ -14,16 +20,15 @@ export const projects = [
             'HTML',
             'CSS'
         ],
-        status: 'In development'
+        status: 'projects.status.inDevelopment'
     },
 
     {
         id: 2,
-        name: 'Network Lab',
-        category: 'Networks',
-        icon: '🌐',
-        description:
-            'Laboratorio interactivo para representar conceptos de redes, conectividad, direccionamiento IP y diagnóstico.',
+        name: 'projects.items.networkLab.name',
+        category: 'projects.items.networkLab.category',
+        icon: ProjectorIcon,
+        description: 'projects.items.networkLab.description',
         technologies: [
             'Vue 3',
             'TCP/IP',
@@ -31,16 +36,15 @@ export const projects = [
             'HTTP',
             'Networking'
         ],
-        status: 'Completed'
+        status: 'projects.status.completed'
     },
 
     {
         id: 3,
-        name: 'Linux Home Server',
-        category: 'Infrastructure',
-        icon: '🐧',
-        description:
-            'Proyecto orientado a la administración de un servidor Linux para servicios de red, archivos y aplicaciones.',
+        name: 'projects.items.linuxServer.name',
+        category: 'projects.items.linuxServer.category',
+        icon: ProjectorIcon,
+        description: 'projects.items.linuxServer.description',
         technologies: [
             'Linux',
             'Bash',
@@ -48,38 +52,36 @@ export const projects = [
             'Networking',
             'Server Administration'
         ],
-        status: 'In development'
+        status: 'projects.status.inDevelopment'
     },
 
     {
         id: 4,
-        name: 'Media Server',
-        category: 'Servers',
-        icon: '📡',
-        description:
-            'Implementación de un servidor para almacenamiento y administración de contenido dentro de una red local.',
+        name: 'projects.items.mediaServer.name',
+        category: 'projects.items.mediaServer.category',
+        icon: ProjectorIcon,
+        description: 'projects.items.mediaServer.description',
         technologies: [
             'Linux',
             'Storage',
             'Networking',
             'Server'
         ],
-        status: 'Planned'
+        status: 'projects.status.planned'
     },
 
     {
         id: 5,
-        name: 'IT Support Lab',
-        category: 'Technical Support',
-        icon: '🔧',
-        description:
-            'Laboratorio enfocado en mantenimiento preventivo, diagnóstico de hardware, instalación de sistemas y solución de problemas.',
+        name: 'projects.items.itSupport.name',
+        category: 'projects.items.itSupport.category',
+        icon: ProjectorIcon,
+        description: 'projects.items.itSupport.description',
         technologies: [
             'Hardware',
             'Windows',
             'Linux',
             'Troubleshooting'
         ],
-        status: 'Planned'
+        status: 'projects.status.planned'
     }
 ]

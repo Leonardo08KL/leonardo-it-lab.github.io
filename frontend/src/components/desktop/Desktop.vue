@@ -1,3 +1,65 @@
+<style scoped>
+/* =========================================
+   DESKTOP
+========================================= */
+
+.desktop {
+    position: relative;
+
+    width: 100%;
+    height: 100vh;
+
+    margin: 0;
+    padding: 0;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(circle at 50% 35%,
+            #172033 0%,
+            #0b1220 45%,
+            #020617 100%);
+}
+
+
+/* =========================================
+   DESKTOP AREA
+========================================= */
+
+.desktop-area {
+    position: absolute;
+
+    top: 42px;
+    right: 0;
+    bottom: 52px;
+    left: 0;
+
+    min-width: 0;
+    min-height: 0;
+
+    overflow: auto;
+
+    scroll-behavior: smooth;
+
+    cursor: default;
+}
+
+
+/* =========================================
+   WINDOWS CONTAINER
+========================================= */
+
+.windows-container {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 10;
+
+    pointer-events: none;
+}
+</style>
+
 <script setup>
 import { ref, onMounted } from 'vue'
 import { useI18n } from 'vue-i18n'
@@ -119,59 +181,3 @@ const handlePower = () => {
 
     </main>
 </template>
-
-<style>
-/* =========================================
-   WINDOWS CONTAINER
-========================================= */
-
-.windows-container {
-    position: absolute;
-
-    inset: 0;
-
-    z-index: 10;
-
-    pointer-events: none;
-}
-
-/* =========================================
-   DESKTOP
-========================================= */
-
-.desktop {
-    position: relative;
-
-    width: 100%;
-    height: 100vh;
-
-    overflow: hidden;
-
-    background:
-        radial-gradient(circle at 50% 35%,
-            #172033 0%,
-            #0b1220 45%,
-            #020617 100%);
-}
-
-/* =========================================
-   DESKTOP AREA
-========================================= */
-
-.desktop-area {
-    position: absolute;
-
-    top: 42px;
-    right: 0;
-    bottom: 52px;
-    left: 0;
-
-    overflow: auto;
-
-    scroll-behavior: smooth;
-    cursor: default;
-
-    min-width: 0;
-    min-height: 0;
-}
-</style>

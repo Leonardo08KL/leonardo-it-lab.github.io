@@ -1,11 +1,16 @@
 <script setup>
 import { reactive, ref } from "vue";
+import { useI18n } from 'vue-i18n'
 
 import { User, Terminal, Network, Code2, Server } from "lucide-vue-next";
 
 import { socialMedia } from "../data/social-media";
 import { highlights } from "../data/highlights";
 
+const { t } = useI18n();
+const changeLanguage = () => {
+    locale.value = locale.value === 'es' ? 'en' : 'es'
+}
 /*
 |--------------------------------------------------------------------------
 | Formulario
@@ -105,6 +110,8 @@ const sendEmail = async () => {
         sending.value = false;
     }
 };
+
+
 </script>
 
 <template>
@@ -123,11 +130,10 @@ const sendEmail = async () => {
 
             <h2>Leonardo Covarrubias Lemus</h2>
 
-            <p class="role animationMain">Junior Developer / IT Support</p>
+            <p class="role animationMain">{{ t('about.position') }}</p>
 
             <p class="description animationMain">
-                Portafolio técnico interactivo diseñado para mostrar conocimientos
-                prácticos en programación, redes, infraestructura y soporte TI.
+                {{ t('about.description') }}
             </p>
 
             <div class="about-social-media">
@@ -148,7 +154,7 @@ const sendEmail = async () => {
             <div class="section-title">
                 <User :size="17" />
 
-                <h3>Focus Areas</h3>
+                <h3>{{ t('about.focus-areas') }}</h3>
             </div>
 
             <div class="highlights">
@@ -157,11 +163,11 @@ const sendEmail = async () => {
 
                     <div>
                         <strong>
-                            {{ item.title }}
+                            {{ t(item.title) }}
                         </strong>
 
                         <p>
-                            {{ item.description }}
+                            {{ t(item.description) }}
                         </p>
                     </div>
                 </article>
@@ -178,20 +184,19 @@ const sendEmail = async () => {
             <div class="section-title">
                 <Terminal :size="17" />
 
-                <h3>Contact Me</h3>
+                <h3>{{ t('about.contact') }}</h3>
             </div>
 
             <p class="description animationMain">
-                Si deseas contactarme, completa el siguiente formulario y me pondré en
-                contacto contigo.
+                {{ t('about.contact-description') }}
             </p>
 
             <!-- ============================================================ 
              CONTACTO DIRECTO ============================================================ -->
-            <h4>Contacto Directo</h4>
+            <!-- <h4>Contacto Directo</h4> -->
             <div class="direct-contact animationMain">
                 <a href="mailto:leonardocovarrubias313@gmail.com" class="email-button">
-                    <Terminal :size="16" /> Contactarme por correo
+                    <Terminal :size="16" /> {{ t('about.email-contact') }}
                 </a>
             </div>
 
@@ -202,7 +207,7 @@ const sendEmail = async () => {
             -->
 
             <div v-if="success" class="form-success">
-                ✓ Mensaje enviado correctamente. Me pondré en contacto contigo.
+                {{ t('about.message-sent') }}
             </div>
 
             <!--
@@ -212,7 +217,7 @@ const sendEmail = async () => {
             -->
 
             <div v-if="error" class="form-error">
-                ✕ No se pudo enviar el mensaje. Inténtalo nuevamente.
+                {{ t('about.message-error') }}
             </div>
 
             <!--
@@ -220,42 +225,44 @@ const sendEmail = async () => {
             FORM
             ========================================================
             -->
-            <h4>Formulario de Contacto</h4>
+            <h4>{{ t('about.form-contact') }}</h4>
             <form id="contact-form" class="contact-form" @submit.prevent="sendEmail">
                 <!-- NAME -->
 
                 <div class="form-group">
-                    <label for="name"> Nombre </label>
+                    <label for="name"> {{ t('about.form.name') }} </label>
 
-                    <input id="name" name="name" v-model="form.name" type="text" placeholder="Tu nombre"
-                        autocomplete="name" required class="animationMain" />
+                    <input id="name" name="name" v-model="form.name" type="text"
+                        :placeholder="t('about.form.placeholder-name')" autocomplete="name" required
+                        class="animationMain" />
                 </div>
 
                 <!-- EMAIL -->
 
                 <div class="form-group">
-                    <label for="email"> Correo electrónico </label>
+                    <label for="email"> {{ t('about.form.email') }} </label>
 
-                    <input id="email" name="email" v-model="form.email" type="email" placeholder="tu@email.com"
-                        autocomplete="email" class="animationMain" required />
+                    <input id="email" name="email" v-model="form.email" type="email"
+                        :placeholder="t('about.form.placeholder-email')" autocomplete="email" class="animationMain"
+                        required />
                 </div>
 
                 <!-- SUBJECT -->
 
                 <div class="form-group">
-                    <label for="subject"> Asunto </label>
+                    <label for="subject"> {{ t('about.form.subject') }} </label>
 
                     <input id="subject" name="subject" v-model="form.subject" type="text"
-                        placeholder="Asunto del mensaje" class="animationMain" required />
+                        :placeholder="t('about.form.placeholder-subject')" class="animationMain" required />
                 </div>
 
                 <!-- MESSAGE -->
 
                 <div class="form-group">
-                    <label for="message"> Mensaje </label>
+                    <label for="message"> {{ t('about.form.message') }} </label>
 
                     <textarea id="message" name="message" v-model="form.message" rows="6"
-                        placeholder="Escribe tu mensaje..." class="animationMain" required></textarea>
+                        :placeholder="t('about.form.placeholder-message')" class="animationMain" required></textarea>
                 </div>
 
                 <!-- BUTTON -->
@@ -263,7 +270,7 @@ const sendEmail = async () => {
                 <button type="submit" class="send-button animationMain" :disabled="sending">
                     <Terminal :size="16" />
 
-                    {{ sending ? "Enviando..." : "Enviar mensaje" }}
+                    {{ sending ? t('about.form.sending') : t('about.form.send') }}
                 </button>
             </form>
         </section>

@@ -15,6 +15,7 @@ import { technicalSkills } from '../data/technicalSkills'
 import { experiences } from '../data/experience'
 import { education } from '../data/education'
 import { languages } from '../data/lenguages'
+import { useI18n } from 'vue-i18n'
 
 const skills = [
     'Java',
@@ -33,24 +34,30 @@ const skills = [
 
 const areas = [
     {
-        title: 'Software Development',
+        title: 'highlights.highlights-focus.Development.title',
         description:
-            'Desarrollo de aplicaciones web y organización de proyectos frontend/backend.',
+            'highlights.highlights-focus.Development.description',
         icon: Code2
     },
     {
-        title: 'Networks',
+        title: 'highlights.highlights-focus.Networks.title',
         description:
-            'Administración y diagnóstico de redes, conectividad y servicios de red.',
+            'highlights.highlights-focus.Networks.description',
         icon: Network
     },
     {
-        title: 'Infrastructure',
+        title: 'highlights.highlights-focus.Infrastructure.title',
         description:
-            'Administración de sistemas Windows y Linux, servidores y servicios.',
+            'highlights.highlights-focus.Infrastructure.description',
         icon: Server
     }
 ]
+
+const { locale, t, tm } = useI18n()
+
+const changeLanguage = () => {
+    locale.value = locale.value === 'es' ? 'en' : 'es'
+}
 
 
 </script>
@@ -59,25 +66,28 @@ const areas = [
     <section class="cv-view">
         <header class="cv-header animationMain">
             <div class="cv-avatar">
-                👨‍💻
+                <img src="https://avatars.githubusercontent.com/u/95943337?s=400&u=04f08459968c76b4813a5efdd9a224729697ad4c&v=4"
+                    alt="Foto de perfil" />
             </div>
 
             <div class="cv-identity">
                 <h2>Leonardo Covarrubias Lemus</h2>
 
                 <p>
-                    Junior Developer / IT Support
+                    {{ t('about.position') }}
                 </p>
 
                 <span>
-                    Web Development • Networks • Infrastructure
+                    {{ t('highlights.highlights-focus.Development.title') }} -
+                    {{ t('highlights.highlights-focus.Networks.title') }} -
+                    {{ t('highlights.highlights-focus.Infrastructure.title') }}
                 </span>
             </div>
 
             <div class="cv-download">
                 <a href="/Covarrubias Lemus Leonardo CV.pdf" download="cv-leonardo-covarrubias.pdf"
                     class="cv-download-button">
-                    <Download :size="16" /> <span>Descargar CV</span>
+                    <Download :size="16" /> <span>{{ t('cv.download') }}</span>
                 </a>
             </div>
         </header>
@@ -85,21 +95,18 @@ const areas = [
         <section class="cv-section">
             <div class="section-title">
                 <User :size="17" />
-                <h3>Profile</h3>
+                <h3>{{ t('cv.profile.title') }}</h3>
             </div>
 
             <p class="profile">
-                Desarrollador backend con experiencia profesional en desarrollo e integración de APIs REST y SOAP,
-                aplicaciones empresariales ymantenimiento de sistemas en producción. Experiencia con Java, Spring Boot,
-                PHP, Laravel y bases de datos SQL/NoSQL. Conocimientos enfacturación electrónica CFDI, autenticación,
-                integración de sistemas, Git, Docker, Jenkins, Linux, Postman y Swagger.
+                {{ t('cv.profile.description') }}
             </p>
         </section>
 
         <section class="cv-section">
             <div class="section-title">
                 <Briefcase :size="17" />
-                <h3>Technical Areas</h3>
+                <h3>{{ t('cv.technical-areas.title') }}</h3>
             </div>
 
             <div class="areas">
@@ -107,8 +114,8 @@ const areas = [
                     <component :is="area.icon" :size="20" />
 
                     <div>
-                        <strong>{{ area.title }}</strong>
-                        <p>{{ area.description }}</p>
+                        <strong>{{ t(area.title) }}</strong>
+                        <p>{{ t(area.description) }}</p>
                     </div>
                 </article>
             </div>
@@ -117,7 +124,7 @@ const areas = [
         <section class="cv-section">
             <div class="section-title">
                 <Code2 :size="17" />
-                <h3>Technologies</h3>
+                <h3>{{ t('cv.technologies.title') }}</h3>
             </div>
 
             <div class="technologies">
@@ -133,7 +140,7 @@ const areas = [
         <section class="cv-section education">
             <div class="section-title">
                 <GraduationCap :size="17" />
-                <h3>Educación</h3>
+                <h3>{{ t('cv.education.title') }}</h3>
             </div>
             <div class="education-list">
                 <article v-for="item in education" :key="`${item.degree}-${item.institution}`" class="education-item">
@@ -142,7 +149,7 @@ const areas = [
                     <div class="education-content">
                         <div class="education-header">
                             <div>
-                                <h4> {{ item.degree }} </h4>
+                                <h4> {{ t(item.degree) }} </h4>
                                 <p class="education-institution"> {{ item.institution }} </p>
                             </div> <span class="education-date"> {{ item.date }} </span>
                         </div> <span class="education-location"> {{ item.location }} </span>
@@ -155,25 +162,49 @@ const areas = [
         <!-- Experience -->
         <!-- ------------------------------------------------------------------- -->
         <section class="cv-section experience-section">
+            <!-- Título de sección -->
             <div class="section-title">
                 <Workflow :size="17" />
-                <h3>Experiencia Laboral</h3>
+                <h3>{{ t('cv.experience.title') }}</h3>
             </div>
+
+            <!-- Experiencias -->
             <div v-for="experience in experiences" :key="`${experience.company}-${experience.position}`"
-                class="experience"> <!-- Encabezado -->
+                class="experience">
+                <!-- Encabezado -->
                 <div class="experience-header">
                     <div>
-                        <h4> <b>{{ experience.company }}</b> - {{ experience.position }} </h4> <span
-                            class="experience-location"> {{ experience.location }} </span>
-                    </div> <span class="experience-date"> {{ experience.date }} </span>
-                </div> <!-- Descripción -->
+                        <h4>
+                            <b>{{ experience.company }}</b>
+                            -
+                            {{ t(experience.position) }}
+                        </h4>
+
+                        <span class="experience-location">
+                            {{ experience.location }}
+                        </span>
+                    </div>
+
+                    <span class="experience-date">
+                        {{ t(experience.date) }}
+                    </span>
+                </div>
+
+                <!-- Descripción -->
                 <div class="experience-description">
                     <ul>
-                        <li v-for="(description, index) in experience.description" :key="index"> {{ description }} </li>
+                        <li v-for="(description, index) in tm(experience.description)" :key="index">
+                            {{ description }}
+                        </li>
                     </ul>
-                </div> <!-- Tecnologías -->
-                <div class="experience-technologies"> <span v-for="technology in experience.technologies"
-                        :key="technology"> {{ technology }} </span> </div>
+                </div>
+
+                <!-- Tecnologías -->
+                <div class="experience-technologies">
+                    <span v-for="technology in experience.technologies" :key="technology">
+                        {{ technology }}
+                    </span>
+                </div>
             </div>
         </section>
 
@@ -183,7 +214,7 @@ const areas = [
         <section class="cv-section technical-skills">
             <div class="section-title">
                 <Code2 :size="17" />
-                <h3>Habilidades Técnicas</h3>
+                <h3>{{ t('cv.skills.title') }}</h3>
             </div>
 
             <div class="technical-skills-grid">
@@ -194,7 +225,7 @@ const areas = [
                         <component :is="category.icon" :size="16" />
 
                         <h4>
-                            {{ category.title }}
+                            {{ t(category.title) }}
                         </h4>
                     </div>
 
@@ -215,7 +246,7 @@ const areas = [
         <section class="cv-section">
             <div class="section-title">
                 <LucideLanguages :size="17" />
-                <h3>Idiomas</h3>
+                <h3>{{ t('lenguages.title') }}</h3>
             </div>
 
             <div class="areas">
@@ -223,8 +254,8 @@ const areas = [
                     <img :src="language.icon" :alt="`Bandera de ${language.title}`" width="24" height="18" />
 
                     <div>
-                        <strong>{{ language.title }}</strong>
-                        <p>{{ language.description }}</p>
+                        <strong>{{ t(language.title) }}</strong>
+                        <p>{{ t(language.description) }}</p>
                     </div>
                 </article>
             </div>
@@ -305,6 +336,19 @@ const areas = [
     font-size: 28px;
 
     animation: avatarReveal 0.6s ease-out 0.1s both;
+    /* margin: 0 auto 12px; */
+
+    overflow: hidden;
+}
+
+.cv-avatar img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+    object-position: center;
 }
 
 

@@ -21,11 +21,11 @@ export const desktopIcons = [
         title: 'desktop.cv',
         icon: FileText
     },
-    {
-        type: 'personal',
-        title: 'desktop.personal',
-        icon: UserRoundCheckIcon
-    },
+    // {
+    //     type: 'personal',
+    //     title: 'desktop.personal',
+    //     icon: UserRoundCheckIcon
+    // },
     {
         type: 'projects',
         title: 'desktop.projects',

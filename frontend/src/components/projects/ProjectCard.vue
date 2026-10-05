@@ -7,23 +7,31 @@ defineProps({
 })
 
 const emit = defineEmits(['open'])
+
+import { useI18n } from 'vue-i18n'
+
+const { locale, t } = useI18n()
+
+const changeLanguage = () => {
+    locale.value = locale.value === 'es' ? 'en' : 'es'
+}
 </script>
 
 <template>
     <article class="project-card">
         <div class="project-header">
-            <div class="project-icon">
-                {{ project.icon || '📁' }}
-            </div>
+            <!-- <div class="project-icon">
+                {{ project.icon }}
+            </div> -->
 
             <div class="project-info">
-                <h3>{{ project.name }}</h3>
-                <span>{{ project.category }}</span>
+                <h3>{{ t(project.name) }}</h3>
+                <span>{{ t(project.category) }}</span>
             </div>
         </div>
 
         <p class="project-description">
-            {{ project.description }}
+            {{ t(project.description) }}
         </p>
 
         <div class="project-technologies">
@@ -34,7 +42,7 @@ const emit = defineEmits(['open'])
 
         <div class="project-footer">
             <span class="project-status">
-                {{ project.status || 'Completed' }}
+                {{ t(project.status) || 'Completed' }}
             </span>
 
             <button type="button" @click="emit('open', project)">

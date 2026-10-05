@@ -1,6 +1,7 @@
 <script setup>
-import { Activity } from 'lucide-vue-next'
+import { Activity, User } from 'lucide-vue-next'
 import { useClock } from '../../composables/useClock'
+import { useI18n } from 'vue-i18n'
 
 defineProps({
     apiStatus: {
@@ -19,15 +20,22 @@ const {
     showSeconds: false
 })
 
-const statusLabel = {
-    checking: 'CHECKING',
-    online: 'ONLINE',
-    offline: 'OFFLINE'
+const { locale, t } = useI18n()
+
+const changeLanguage = () => {
+    locale.value = locale.value === 'es' ? 'en' : 'es'
 }
 
+const statusLabel = {
+    checking: locale === 'es' ? 'COMPROBANDO' : 'CHECKING',
+    online: locale === 'es' ? 'CONECTADO' : 'ONLINE',
+    offline: locale === 'es' ? 'DESCONECTADO' : 'OFFLINE'
+}
 const getStatusLabel = (status) => {
     return statusLabel[status] || 'UNKNOWN'
 }
+
+
 </script>
 
 <template>
@@ -36,7 +44,7 @@ const getStatusLabel = (status) => {
         <!-- BRAND -->
         <button class="brand" type="button" @click="emit('toggle-menu')" aria-label="Abrir menú principal">
             <span class="brand-icon">
-                🐧
+                <User :size="20" />
             </span>
 
             <span class="brand-info">
@@ -50,7 +58,7 @@ const getStatusLabel = (status) => {
         <div class="top-status">
 
             <!-- API -->
-            <span class="status-item">
+            <!-- <span class="status-item">
                 <Activity :size="13" stroke-width="2" />
 
                 <span class="status-label">
@@ -60,7 +68,7 @@ const getStatusLabel = (status) => {
                 <span class="status-value" :class="`status-${apiStatus}`">
                     {{ getStatusLabel(apiStatus) }}
                 </span>
-            </span>
+            </span> -->
 
 
             <!-- SYSTEM -->

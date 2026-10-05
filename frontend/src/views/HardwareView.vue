@@ -8,6 +8,14 @@ import {
     Thermometer
 } from 'lucide-vue-next'
 
+import { useI18n } from 'vue-i18n'
+
+const { locale, t, tm } = useI18n()
+
+const changeLanguage = () => {
+    locale.value = locale.value === 'es' ? 'en' : 'es'
+}
+
 const components = [
     {
         name: 'Processor',
@@ -35,14 +43,8 @@ const components = [
     }
 ]
 
-const supportAreas = [
-    'Preventive maintenance',
-    'Hardware diagnostics',
-    'Component replacement',
-    'Operating system installation',
-    'Driver installation',
-    'Performance troubleshooting'
-]
+const supportAreas = 'hardware.supportAreas';
+
 </script>
 
 <template>
@@ -60,10 +62,10 @@ const supportAreas = [
                     LEONARDO IT LAB
                 </span>
 
-                <h2>Hardware Lab</h2>
+                <h2>{{ t('hardware.title') }}</h2>
 
                 <p>
-                    Diagnóstico, mantenimiento y soporte de equipos.
+                    {{ t('hardware.description') }}
                 </p>
             </div>
 
@@ -75,7 +77,7 @@ const supportAreas = [
 
             <div class="section-heading">
                 <span class="section-line"></span>
-                <h3>System Components</h3>
+                <h3>{{ t('hardware.components.title') }}</h3>
             </div>
 
             <div class="components-grid">
@@ -116,12 +118,12 @@ const supportAreas = [
 
             <div class="section-heading">
                 <span class="section-line"></span>
-                <h3>Support Areas</h3>
+                <h3>{{ t('hardware.support.title') }}</h3>
             </div>
 
             <div class="support-list">
 
-                <div v-for="(area, index) in supportAreas" :key="area" class="support-item" :style="{
+                <div v-for="(area, index) in (tm('hardware.supportAreas'))" :key="area" class="support-item" :style="{
                     '--delay': `${index * 70}ms`
                 }">
 
@@ -130,7 +132,7 @@ const supportAreas = [
                     </span>
 
                     <span>
-                        {{ area }}
+                        {{ t(area) }}
                     </span>
 
                 </div>
@@ -148,8 +150,7 @@ const supportAreas = [
             </div>
 
             <span>
-                Hardware diagnostics should combine physical inspection,
-                software diagnostics and system monitoring.
+                {{ t('hardware.notes.description') }}
             </span>
 
         </div>

@@ -1,31 +1,32 @@
 export const experiences = [
     {
         company: 'FLensa',
-        position: 'Desarrollador FullStack',
+        position: 'cv.experience.experience-list.experience-1.position',
         location: 'Villagrán, Gto.',
-        date: 'Enero 2022 - Julio 2026',
+        date: 'cv.experience.experience-list.experience-1.date',
 
-        description: [
-            'Desarrollé e integré APIs REST y SOAP para la interconexión de sistemas empresariales, facilitando el intercambio de información entre aplicaciones.',
+        description: 'cv.experience.experience-list.experience-1.worked-on',
 
-            'Desarrollé y mantuve aplicaciones empresariales utilizando Java, Spring Boot, PHP y Laravel, implementando nuevas funcionalidades y atendiendo requerimientos de negocio.',
+        //     'Desarrollé e integré APIs REST y SOAP para la interconexión de sistemas empresariales, facilitando el intercambio de información entre aplicaciones.',
 
-            'Implementé funcionalidades relacionadas con facturación electrónica CFDI, proporcionando soporte a procesos empresariales para la generación y gestión de comprobantes.',
+        //     'Desarrollé y mantuve aplicaciones empresariales utilizando Java, Spring Boot, PHP y Laravel, implementando nuevas funcionalidades y atendiendo requerimientos de negocio.',
 
-            'Diseñé y modelé bases de datos relacionales y NoSQL, estructurando la información requerida por las aplicaciones y sus funcionalidades.',
+        //     'Implementé funcionalidades relacionadas con facturación electrónica CFDI, proporcionando soporte a procesos empresariales para la generación y gestión de comprobantes.',
 
-            'Implementé mecanismos de autenticación y autorización en aplicaciones web, controlando el acceso a información y funcionalidades.',
+        //     'Diseñé y modelé bases de datos relacionales y NoSQL, estructurando la información requerida por las aplicaciones y sus funcionalidades.',
 
-            'Resolví bugs y realicé mantenimiento evolutivo en aplicaciones en producción, contribuyendo a la continuidad operativa de los sistemas.',
+        //     'Implementé mecanismos de autenticación y autorización en aplicaciones web, controlando el acceso a información y funcionalidades.',
 
-            'Analicé requerimientos directamente con usuarios y los transformé en funcionalidades de software orientadas a atender necesidades del negocio.',
+        //     'Resolví bugs y realicé mantenimiento evolutivo en aplicaciones en producción, contribuyendo a la continuidad operativa de los sistemas.',
 
-            'Integré sistemas de control de acceso mediante datos biométricos, incorporando mecanismos de identificación a los procesos empresariales.',
+        //     'Analicé requerimientos directamente con usuarios y los transformé en funcionalidades de software orientadas a atender necesidades del negocio.',
 
-            'Documenté código y funcionalidades, facilitando el mantenimiento y la comprensión de las aplicaciones por parte del equipo.',
+        //     'Integré sistemas de control de acceso mediante datos biométricos, incorporando mecanismos de identificación a los procesos empresariales.',
 
-            'Atendí y di seguimiento a tickets de soporte, diagnosticando y resolviendo incidencias relacionadas con aplicaciones empresariales.'
-        ],
+        //     'Documenté código y funcionalidades, facilitando el mantenimiento y la comprensión de las aplicaciones por parte del equipo.',
+
+        //     'Atendí y di seguimiento a tickets de soporte, diagnosticando y resolviendo incidencias relacionadas con aplicaciones empresariales.'
+        // ],
 
         technologies: [
             'Java',
@@ -43,26 +44,27 @@ export const experiences = [
 
     {
         company: 'KOLBENSCHMIDT PISTONS CELAYA',
-        position: 'Practicante de Infraestructura',
+        position: 'cv.experience.experience-list.experience-2.position',
         location: 'Celaya, Guanajuato.',
-        date: 'Junio 2024 - Diciembre 2024',
+        date: 'cv.experience.experience-list.experience-2.date',
 
-        description: [
-            'Administré bases de datos SQL Server, MySQL y MariaDB, realizando consultas, actualizaciones y tareas de mantenimiento para sistemas empresariales.',
+        description: 'cv.experience.experience-list.experience-2.worked-on'
 
-            'Desarrollé e integré proyectos internos orientados a optimizar procesos operativos de la organización.',
+        // 'Administré bases de datos SQL Server, MySQL y MariaDB, realizando consultas, actualizaciones y tareas de mantenimiento para sistemas empresariales.',
 
-            'Diseñé y ejecuté pruebas de software, validando el funcionamiento de nuevas funcionalidades antes de su implementación.',
+        // 'Desarrollé e integré proyectos internos orientados a optimizar procesos operativos de la organización.',
 
-            'Diseñé interfaces web responsivas, adaptando las aplicaciones a diferentes dispositivos y tamaños de pantalla.',
+        // 'Diseñé y ejecuté pruebas de software, validando el funcionamiento de nuevas funcionalidades antes de su implementación.',
 
-            'Diagnostiqué problemas de conectividad en redes LAN/WAN, utilizando herramientas como ping, tracert/traceroute, ipconfig/ifconfig y nslookup.',
+        // 'Diseñé interfaces web responsivas, adaptando las aplicaciones a diferentes dispositivos y tamaños de pantalla.',
 
-            'Administré y configuré servidores Windows y Linux, incluyendo servicios como Active Directory, DNS, DHCP, FTP y web servers.',
+        // 'Diagnostiqué problemas de conectividad en redes LAN/WAN, utilizando herramientas como ping, tracert/traceroute, ipconfig/ifconfig y nslookup.',
 
-            'Implementé medidas de seguridad en sistemas y redes, incluyendo firewalls, antivirus y políticas de acceso.'
-        ],
+        // 'Administré y configuré servidores Windows y Linux, incluyendo servicios como Active Directory, DNS, DHCP, FTP y web servers.',
 
+        // 'Implementé medidas de seguridad en sistemas y redes, incluyendo firewalls, antivirus y políticas de acceso.'
+        // ],
+        ,
         technologies: [
             'C#',
             '.NET',

@@ -570,7 +570,7 @@ const openApplication = (type) => {
                 <div class="profile">
 
                     <div class="profile-avatar">
-                        🐧
+                        <User :size="20" />
                     </div>
 
                     <div class="profile-info">

@@ -1,7 +1,14 @@
 <script setup>
+
+import { useI18n } from 'vue-i18n'
+const { locale, t } = useI18n()
+
+const changeLanguage = () => {
+    locale.value = locale.value === 'es' ? 'en' : 'es'
+}
 const skillGroups = [
     {
-        title: 'Programming',
+        title: locale === 'es' ? 'Programacion' : 'Programming',
         skills: [
             { name: 'Java', level: 80 },
             { name: 'JavaScript', level: 85 },
@@ -13,7 +20,7 @@ const skillGroups = [
         ]
     },
     {
-        title: 'Frontend',
+        title: locale === 'es' ? 'Frontend' : 'Frontend',
         skills: [
             { name: 'Vue.js', level: 85 },
             { name: 'Angular', level: 70 },
@@ -60,8 +67,8 @@ const skillGroups = [
         <!-- Header -->
         <header class="skills-header">
             <div class="header-content">
-                <h2>Technical Skills</h2>
-                <p> Tecnologías y áreas técnicas. </p>
+                <h2>{{ t('technicalSkills.title') }}</h2>
+                <p> {{ t('technicalSkills.description') }} </p>
             </div>
         </header>
 
@@ -78,7 +85,7 @@ const skillGroups = [
                         {{ String(groupIndex + 1).padStart(2, '0') }}
                     </span>
 
-                    <h3>{{ group.title }}</h3>
+                    <h3>{{ t(group.title) }}</h3>
                 </div>
 
                 <div class="skills">

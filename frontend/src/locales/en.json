@@ -1,7 +1,7 @@
 {
     "desktop": {
-        "about": "About",
-        "cv": "CV",
+        "about": "About Me",
+        "cv": "Resume",
         "personal": "Personal",
         "projects": "Projects",
         "skills": "Skills",
@@ -15,18 +15,307 @@
         "clock": "Clock",
         "online": "Online",
         "offline": "Offline",
-        "shutdown": "Shutdown",
+        "shutdown": "Shut Down",
         "start": "Start"
     },
     "appDescription": {
         "about": "About Leonardo",
-        "cv": "Professional CV",
+        "cv": "Professional Resume",
         "personal": "Personal Information",
         "projects": "Development Projects",
-        "skills": "Skills and Knowledge",
+        "skills": "Technical Skills",
         "linux": "Linux Lab",
         "terminal": "Command Terminal",
         "network": "Network Lab",
-        "hardware": "Support and Maintenance"
+        "hardware": "IT Support & Maintenance"
+    },
+    "about": {
+        "title": "About Me",
+        "description": "Interactive technical portfolio showcasing hands-on experience in software development, networking, infrastructure, and IT support.",
+        "position": "Junior Developer / IT Support",
+        "focus-areas": "Areas of Focus",
+        "contact": "Contact",
+        "contact-description": "Feel free to reach out through any of the following channels:",
+        "email-contact": "Email",
+        "form-contact": "Contact Form",
+        "message-sent": "Message sent successfully!",
+        "message-error": "Failed to send the message. Please try again later.",
+        "form": {
+            "name": "Name",
+            "placeholder-name": "Your name",
+            "email": "Email",
+            "placeholder-email": "Your email",
+            "message": "Message",
+            "placeholder-message": "Write your message...",
+            "subject": "Subject",
+            "placeholder-subject": "Message subject",
+            "send": "Send",
+            "sending": "Sending..."
+        }
+    },
+    "highlights": {
+        "title": "Highlights",
+        "description": "Key areas of my technical experience and skills across software development and IT.",
+        "skills": {
+            "title": "Skills",
+            "description": "Technical skills and knowledge developed throughout my career."
+        },
+        "projects": {
+            "title": "Projects",
+            "description": "Development projects demonstrating my ability to build practical solutions."
+        },
+        "experience": {
+            "title": "Experience",
+            "description": "Professional experience and previous projects supporting my technical background."
+        },
+        "highlights-focus": {
+            "Development": {
+                "title": "Web Development",
+                "description": "Web applications and frontend development."
+            },
+            "IT-Support": {
+                "title": "IT Support",
+                "description": "Hardware troubleshooting and maintenance."
+            },
+            "Networks": {
+                "title": "Networking",
+                "description": "Network configuration and administration."
+            },
+            "Infrastructure": {
+                "title": "Infrastructure",
+                "description": "Deployment and management of IT infrastructure."
+            }
+        }
+    },
+    "cv": {
+        "title": "Resume",
+        "description": "Professional resume highlighting my experience, technical skills, and achievements in software development and IT.",
+        "download": "Download Resume",
+        "profile": {
+            "title": "Profile",
+            "description": "Backend developer with professional experience building and integrating REST and SOAP APIs, enterprise applications, and production systems. Experienced with Java, Spring Boot, PHP, Laravel, and SQL/NoSQL databases. Familiar with CFDI e-invoicing, authentication, system integration, Git, Docker, Jenkins, Linux, Postman, and Swagger."
+        },
+        "technical-areas": {
+            "title": "Technical Areas",
+            "description": "Key technical areas covered by my experience and hands-on knowledge."
+        },
+        "technologies": {
+            "title": "Technologies",
+            "description": "Technologies and tools I use in software development and IT operations."
+        },
+        "education": {
+            "title": "Education",
+            "description": "Academic background and technical training in software development and IT.",
+            "degrees": {
+                "title": "Degrees",
+                "description": "Academic degrees and technical education.",
+                "ing": "B.S. in Computer Systems Engineering",
+                "tec": "Programming Technician"
+            }
+        },
+        "experience": {
+            "title": "Experience",
+            "description": "Professional experience and projects supporting my technical background.",
+            "experience-list": {
+                "title": "Professional Experience",
+                "description": "Selected professional experience and technical projects.",
+                "experience-1": {
+                    "company": "FLensa",
+                    "position": "Backend Developer",
+                    "description": "REST and SOAP API development, enterprise applications, and production system maintenance.",
+                    "date": "January 2025 - June 2026",
+                    "worked-on": [
+                        "Developed and integrated REST and SOAP APIs to connect enterprise systems and enable data exchange between applications.",
+                        "Developed and maintained enterprise applications using Java, Spring Boot, PHP, and Laravel, implementing new features and business requirements.",
+                        "Implemented CFDI e-invoicing features supporting the generation and management of electronic invoices.",
+                        "Designed and modeled relational and NoSQL databases to support application requirements and business processes.",
+                        "Implemented authentication and authorization mechanisms to control access to web applications and resources.",
+                        "Resolved bugs and performed application maintenance in production environments, supporting system availability and continuity.",
+                        "Gathered requirements directly from users and translated them into business-focused software features.",
+                        "Integrated biometric access-control systems into enterprise processes and identification workflows.",
+                        "Documented code and application functionality to improve maintainability and knowledge transfer.",
+                        "Managed and followed up on support tickets, diagnosing and resolving issues related to enterprise applications."
+                    ]
+                },
+                "experience-2": {
+                    "company": "KS",
+                    "position": "Infrastructure Intern",
+                    "description": "IT infrastructure, database administration, network troubleshooting, and internal software projects.",
+                    "date": "June 2024 - December 2024",
+                    "worked-on": [
+                        "Administered SQL Server, MySQL, and MariaDB databases, performing queries, updates, and maintenance tasks for enterprise systems.",
+                        "Developed and integrated internal projects focused on improving operational processes.",
+                        "Designed and executed software tests to validate new features before deployment.",
+                        "Designed responsive web interfaces for different devices and screen sizes.",
+                        "Diagnosed LAN/WAN connectivity issues using tools such as ping, tracert/traceroute, ipconfig/ifconfig, and nslookup.",
+                        "Configured and administered Windows and Linux servers, including Active Directory, DNS, DHCP, FTP, and web services.",
+                        "Implemented basic security measures across systems and networks, including firewalls, antivirus, and access policies."
+                    ]
+                }
+            }
+        },
+        "skills": {
+            "title": "Skills",
+            "description": "Technical skills and knowledge developed throughout my career."
+        }
+    },
+    "technicalSkills": {
+        "title": "Technical Skills",
+        "description": "Technical skills and knowledge developed throughout my career in software development and IT.",
+        "languages": "Languages",
+        "backend": "Backend",
+        "databases": "Databases",
+        "webDevelopment": "Web Development",
+        "devops": "DevOps",
+        "tools": "Tools",
+        "methodologies": "Methodologies"
+    },
+    "languages": {
+        "title": "Languages",
+        "description": "Languages I speak and my proficiency level in each.",
+        "spanish": {
+            "title": "Spanish",
+            "level": "Native",
+            "description": "Native speaker with fluent written and spoken communication."
+        },
+        "english": {
+            "title": "English",
+            "level": "Intermediate",
+            "description": "Intermediate proficiency with the ability to communicate in everyday and professional contexts."
+        }
+    },
+    "linux": {
+        "title": "Linux Lab",
+        "description": "Hands-on Linux environment for system administration and experimentation.",
+        "admin": {
+            "title": "System Administration",
+            "description": "Linux system configuration and administration."
+        },
+        "terminal": {
+            "title": "Terminal",
+            "description": "Command-line system administration."
+        },
+        "services": {
+            "title": "Services",
+            "description": "Service management with systemd."
+        },
+        "security": {
+            "title": "Security",
+            "description": "Users, permissions, and basic system hardening."
+        },
+        "monitoring": {
+            "title": "Monitoring",
+            "description": "Process and resource monitoring."
+        },
+        "storage": {
+            "title": "Storage",
+            "description": "Disks, partitions, and file systems."
+        },
+        "networking": {
+            "title": "Networking",
+            "description": "Network interface configuration and troubleshooting."
+        },
+        "commands": {
+            "title": "Commands",
+            "description": "Useful commands for Linux administration and configuration."
+        }
+    },
+    "network-lab": {
+        "title": "Network Lab",
+        "description": "Hands-on networking environment for configuration, connectivity, and troubleshooting.",
+        "topology": {
+            "title": "Network Topology",
+            "description": "Network topology and connected device status."
+        },
+        "tools": {
+            "title": "Network Tools",
+            "description": "Tools for network diagnostics and analysis.",
+            "tools-list": {
+                "ping": {
+                    "title": "Ping",
+                    "description": "Tests connectivity between network devices."
+                },
+                "traceroute": {
+                    "title": "Traceroute",
+                    "description": "Traces the path packets take to reach a host."
+                },
+                "nslookup": {
+                    "title": "NSLookup",
+                    "description": "Queries DNS servers for domain and host information."
+                },
+                "dig": {
+                    "title": "Dig",
+                    "description": "Performs detailed DNS queries."
+                },
+                "whois": {
+                    "title": "Whois",
+                    "description": "Retrieves domain registration information."
+                },
+                "nmap": {
+                    "title": "Nmap",
+                    "description": "Scans networks to discover hosts and services."
+                }
+            }
+        }
+    },
+    "hardware": {
+        "title": "Hardware Lab",
+        "description": "Hands-on environment for hardware components, maintenance, and troubleshooting.",
+        "components": {
+            "title": "Hardware Components",
+            "description": "Hardware component inspection and analysis."
+        },
+        "support": {
+            "title": "Support Areas",
+            "description": "Hardware diagnostics, maintenance, and troubleshooting."
+        },
+        "notes": {
+            "title": "Diagnostic Notes",
+            "description": "Hardware diagnostics should combine physical inspection, software-based testing, and system monitoring."
+        },
+        "supportAreas": [
+            "Preventive Maintenance",
+            "Hardware Diagnostics",
+            "Component Replacement",
+            "Operating System Installation",
+            "Driver Installation",
+            "Performance Troubleshooting"
+        ]
+    },
+    "projects": {
+        "title": "Projects",
+        "description": "Development and infrastructure projects demonstrating my ability to build practical solutions.",
+        "status": {
+            "inDevelopment": "In Development",
+            "completed": "Completed",
+            "planned": "Planned"
+        },
+        "items": {
+            "itLab": {
+                "name": "Leonardo IT Lab",
+                "category": "Portfolio / IT Infrastructure",
+                "description": "Interactive portfolio built with Vue and Node.js showcasing software development, IT support, networking, and infrastructure skills."
+            },
+            "networkLab": {
+                "name": "Network Lab",
+                "category": "Networking",
+                "description": "Interactive lab for exploring networking concepts, connectivity, IP addressing, and troubleshooting."
+            },
+            "linuxServer": {
+                "name": "Linux Home Server",
+                "category": "Infrastructure",
+                "description": "Linux server project focused on network services, file management, and application hosting."
+            },
+            "mediaServer": {
+                "name": "Media Server",
+                "category": "Servers",
+                "description": "Local network server for media storage and content management."
+            },
+            "itSupport": {
+                "name": "IT Support Lab",
+                "category": "IT Support",
+                "description": "Hands-on lab focused on preventive maintenance, hardware diagnostics, OS installation, and troubleshooting."
+            }
+        }
     }
 }

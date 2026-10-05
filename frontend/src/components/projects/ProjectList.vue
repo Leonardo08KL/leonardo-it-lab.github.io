@@ -5,6 +5,14 @@ import { projects } from '../../data/projects'
 const openProject = (project) => {
     console.log('Project selected:', project)
 }
+
+import { useI18n } from 'vue-i18n'
+
+const { locale, t } = useI18n()
+
+const changeLanguage = () => {
+    locale.value = locale.value === 'es' ? 'en' : 'es'
+}
 </script>
 
 <template>
@@ -17,17 +25,17 @@ const openProject = (project) => {
                 <div class="title-row">
                     <span class="title-indicator"></span>
 
-                    <h2>Projects</h2>
+                    <h2>{{ t('projects.title') }}</h2>
                 </div>
 
                 <p>
-                    Proyectos de desarrollo, infraestructura y soporte TI.
+                    {{ t('projects.description') }}
                 </p>
             </div>
 
             <span class="project-count">
                 <span class="count-dot"></span>
-                {{ projects.length }} proyectos
+                {{ projects.length }} {{ t('projects.title') }}
             </span>
 
         </header>

@@ -5,38 +5,44 @@ import {
     ShieldCheck,
     Activity,
     HardDrive,
-    Network
+    Network,
+    User
 } from 'lucide-vue-next'
+import { useI18n } from 'vue-i18n'
+const { locale, t } = useI18n()
 
+const changeLanguage = () => {
+    locale.value = locale.value === 'es' ? 'en' : 'es'
+}
 const linuxTools = [
     {
-        title: 'Terminal',
-        description: 'Administración mediante línea de comandos.',
+        title: 'linux.terminal.title',
+        description: 'linux.terminal.description',
         icon: Terminal
     },
     {
-        title: 'Services',
-        description: 'Gestión de servicios mediante systemd.',
+        title: 'linux.services.title',
+        description: 'linux.services.description',
         icon: Server
     },
     {
-        title: 'Security',
-        description: 'Usuarios, permisos y configuración básica.',
+        title: 'linux.security.title',
+        description: 'linux.security.description',
         icon: ShieldCheck
     },
     {
-        title: 'Monitoring',
-        description: 'Supervisión de procesos y recursos.',
+        title: 'linux.monitoring.title',
+        description: 'linux.monitoring.description',
         icon: Activity
     },
     {
-        title: 'Storage',
-        description: 'Discos, particiones y sistemas de archivos.',
+        title: 'linux.storage.title',
+        description: 'linux.storage.description',
         icon: HardDrive
     },
     {
-        title: 'Networking',
-        description: 'Configuración y diagnóstico de interfaces.',
+        title: 'linux.networking.title',
+        description: 'linux.networking.description',
         icon: Network
     }
 ]
@@ -61,14 +67,14 @@ const commands = [
         <header class="linux-header">
 
             <div class="linux-logo">
-                🐧
+                <User :size="20" />
             </div>
 
             <div class="linux-title">
-                <h2>Linux Lab</h2>
+                <h2>{{ t('linux.title') }}</h2>
 
                 <p>
-                    Administración y diagnóstico de sistemas Linux.
+                    {{ t('linux.description') }}
                 </p>
             </div>
 
@@ -90,7 +96,7 @@ const commands = [
 
                 <h3 class="section-title">
                     <span class="title-indicator"></span>
-                    Administration Areas
+                    {{ t('linux.admin.title') }}
                 </h3>
 
                 <div class="linux-tools">
@@ -106,11 +112,11 @@ const commands = [
                         <div class="tool-content">
 
                             <strong>
-                                {{ tool.title }}
+                                {{ t(tool.title) }}
                             </strong>
 
                             <p>
-                                {{ tool.description }}
+                                {{ t(tool.description) }}
                             </p>
 
                         </div>
@@ -130,7 +136,7 @@ const commands = [
 
                 <h3 class="section-title">
                     <span class="title-indicator"></span>
-                    Common Commands
+                    {{ t('linux.commands.title') }}
                 </h3>
 
                 <div class="commands">

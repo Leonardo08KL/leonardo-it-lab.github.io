@@ -10,7 +10,13 @@ import {
 import NetworkStatus from './NetworkStatus.vue'
 import NetworkTools from './NetworkTools.vue'
 import { useNetwork } from '../../composables/useNetwork'
+import { useI18n } from 'vue-i18n'
 
+const { locale, t } = useI18n()
+
+const changeLanguage = () => {
+    locale.value = locale.value === 'es' ? 'en' : 'es'
+}
 const {
     status,
     ip,
@@ -58,12 +64,11 @@ const runNetworkScan = () => {
                 </span>
 
                 <h2>
-                    Network Lab
+                    {{ t('network-lab.title') }}
                 </h2>
 
                 <p>
-                    Simulación de infraestructura y
-                    herramientas de diagnóstico de red.
+                    {{ t('network-lab.description') }}
                 </p>
 
             </div>
@@ -91,11 +96,11 @@ const runNetworkScan = () => {
             <div class="topology-header">
 
                 <span class="section-label">
-                    NETWORK TOPOLOGY
+                    {{ t('network-lab.topology.title') }}
                 </span>
 
                 <h3>
-                    Local Infrastructure
+                    {{ t('network-lab.topology.description') }}
                 </h3>
 
             </div>
