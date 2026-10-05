@@ -26,6 +26,42 @@
     background: #dc2626;
     color: white;
 }
+
+/* =========================================
+   WINDOW CONTROLS
+========================================= */
+
+.window-controls {
+    display: flex;
+    align-items: center;
+
+    gap: 2px;
+}
+
+.window-control {
+    width: 30px;
+    height: 26px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 4px;
+
+    background: transparent;
+    color: #94a3b8;
+
+    cursor: pointer;
+}
+
+.window-control:hover {
+    background: #1e293b;
+    color: #f8fafc;
+}
+
+.window-control.close:hover {
+    background: #7f1d1d;
+    color: #fecaca;
+}
 </style>
 <script setup>
 import {

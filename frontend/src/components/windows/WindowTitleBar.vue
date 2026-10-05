@@ -35,6 +35,50 @@
     align-items: center;
     gap: 2px;
 }
+
+
+/* =========================================
+   WINDOW TITLE BAR
+========================================= */
+
+.window-title-bar {
+    height: 38px;
+    min-height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 7px 0 12px;
+
+    border-bottom: 1px solid #263241;
+
+    background: #111827;
+
+    cursor: default;
+
+    user-select: none;
+}
+
+.window-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    min-width: 0;
+
+    color: #cbd5e1;
+
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.window-title span {
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
 </style>
 
 <script setup>

@@ -135,6 +135,9 @@ const windowStyle = computed(() => {
         }
     }
 
+    const x = props.window.position?.x ?? 0
+    const y = props.window.position?.y ?? 0
+
     return {
         width:
             typeof props.width === 'number'
@@ -148,14 +151,10 @@ const windowStyle = computed(() => {
 
         zIndex: props.window.zIndex,
 
-        left: `calc(50% + ${props.window.position?.x || 0
-            }px)`,
-
-        top: `calc(50% + ${props.window.position?.y || 0
-            }px)`
+        left: `calc(50% + ${x}px)`,
+        top: `calc(50% + ${y}px)`
     }
 })
-
 /*
 |--------------------------------------------------------------------------
 | Window controls
@@ -202,13 +201,118 @@ onUnmounted(() => {
         maximized: window.maximized,
         dragging
     }" :style="windowStyle" @mousedown="handleFocus">
-
         <WindowTitleBar :title="title" :icon="icon" :maximized="window.maximized" @close="handleClose"
             @minimize="handleMinimize" @maximize="handleMaximize" @drag-start="startDrag" />
 
         <div class="app-window-content">
             <slot />
         </div>
-
     </section>
 </template>
+
+<style>
+/* ==========================================================================
+   APP WINDOW
+   ========================================================================== */
+
+.app-window {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    display: flex;
+    flex-direction: column;
+
+    min-width: 320px;
+    min-height: 220px;
+
+    overflow: hidden;
+
+    border: 1px solid #334155;
+    border-radius: 9px;
+
+    background: #0f172a;
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.45),
+        0 5px 15px rgba(0, 0, 0, 0.25);
+
+    /*
+     * Siempre parte exactamente del centro.
+     */
+    transform: translate(-50%, -50%);
+
+    /*
+     * No hay animación al abrir.
+     */
+    animation: none;
+
+    /*
+     * Evita efectos visuales innecesarios
+     * mientras se mueve la ventana.
+     */
+    will-change: left, top;
+
+    pointer-events: auto;
+
+    z-index: 1;
+}
+
+
+/* ==========================================================================
+   WINDOW CONTENT
+   ========================================================================== */
+
+.app-window-content {
+    flex: 1;
+
+    min-width: 0;
+    min-height: 0;
+
+    overflow: hidden;
+
+    background: #0f172a;
+}
+
+
+/* ==========================================================================
+   MAXIMIZED WINDOW
+   ========================================================================== */
+
+.app-window.maximized {
+    top: 0;
+    left: 0;
+
+    width: 100% !important;
+    height: 100% !important;
+
+    border: 0;
+    border-radius: 0;
+
+    transform: none;
+}
+
+
+/* ==========================================================================
+   DRAGGING
+   ========================================================================== */
+
+.app-window.dragging {
+    cursor: grabbing;
+
+    user-select: none;
+}
+
+
+/* ==========================================================================
+   REDUCE MOTION
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    .app-window {
+        animation: none;
+        transition: none;
+    }
+}
+</style>

@@ -7,6 +7,7 @@ import SkillsView from '../views/SkillsView.vue'
 import HardwareView from '../views/HardwareView.vue'
 import CVView from '../views/CVView.vue'
 import AboutView from '../views/AboutView.vue'
+import MovieModal from '../components/movies/MovieModal.vue'
 
 export const windowComponents = {
     terminal: Terminal,
@@ -16,5 +17,6 @@ export const windowComponents = {
     skills: SkillsView,
     hardware: HardwareView,
     cv: CVView,
-    about: AboutView
+    about: AboutView,
+    personal: MovieModal
 }

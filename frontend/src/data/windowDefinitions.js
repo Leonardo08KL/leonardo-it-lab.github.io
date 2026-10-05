@@ -10,6 +10,21 @@ import {
 } from 'lucide-vue-next'
 
 export const windowDefinitions = {
+
+    about: {
+        type: 'about',
+        title: 'About',
+        icon: User,
+        width: 700,
+        height: 950
+    },
+    cv: {
+        type: 'cv',
+        title: 'CV',
+        icon: FileText,
+        width: 700,
+        height: 600
+    },
     terminal: {
         type: 'terminal',
         title: 'Terminal',
@@ -58,19 +73,14 @@ export const windowDefinitions = {
         height: 500
     },
 
-    cv: {
-        type: 'cv',
-        title: 'CV',
-        icon: FileText,
-        width: 700,
-        height: 600
-    },
 
-    about: {
-        type: 'about',
-        title: 'About',
-        icon: User,
-        width: 600,
-        height: 450
-    }
+
+    // personal: {
+    //     type: 'personal',
+    //     title: 'Personal',
+    //     icon: User,
+    //     width: 700,
+    //     height: 600
+    // },
+
 }

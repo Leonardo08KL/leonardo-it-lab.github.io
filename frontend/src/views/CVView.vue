@@ -6,10 +6,7 @@ import {
     Server,
     GraduationCap,
     Briefcase,
-    WorkflowIcon,
     Workflow,
-    Languages,
-    LanguagesIcon,
     LucideLanguages,
     Download
 } from 'lucide-vue-next'
@@ -60,7 +57,7 @@ const areas = [
 
 <template>
     <section class="cv-view">
-        <header class="cv-header">
+        <header class="cv-header animationMain">
             <div class="cv-avatar">
                 👨‍💻
             </div>
@@ -236,15 +233,22 @@ const areas = [
 </template>
 
 <style scoped>
+/* ==========================================================================
+   1. BASE
+   ========================================================================== */
+
 .area img {
     width: 24px;
     height: 18px;
-
+    flex-shrink: 0;
     object-fit: cover;
     border-radius: 3px;
-
-    flex-shrink: 0;
 }
+
+
+/* ==========================================================================
+   2. CV VIEW
+   ========================================================================== */
 
 .cv-view {
     width: 100%;
@@ -257,18 +261,33 @@ const areas = [
 
     background: #0f172a;
     color: #cbd5e1;
+
+    animation: cvFadeIn 0.45s ease-out both;
 }
+
+
+/* ==========================================================================
+   3. CV HEADER
+   ========================================================================== */
 
 .cv-header {
     display: flex;
     align-items: center;
+
     gap: 15px;
 
     padding-bottom: 18px;
     margin-bottom: 18px;
 
     border-bottom: 1px solid #263241;
+
+    animation: headerReveal 0.55s ease-out both;
 }
+
+
+/* --------------------------------------------------------------------------
+   Avatar
+   -------------------------------------------------------------------------- */
 
 .cv-avatar {
     width: 58px;
@@ -277,22 +296,27 @@ const areas = [
     display: grid;
     place-items: center;
 
+    flex-shrink: 0;
+
     border-radius: 12px;
 
     background: #1e293b;
 
     font-size: 28px;
+
+    animation: avatarReveal 0.6s ease-out 0.1s both;
 }
 
-.cv-download {
-    margin-left: auto;
-    font-size: 12px;
-}
+
+/* --------------------------------------------------------------------------
+   Identity
+   -------------------------------------------------------------------------- */
 
 .cv-identity h2 {
     margin: 0;
 
     color: #f8fafc;
+
     font-size: 23px;
 }
 
@@ -300,46 +324,204 @@ const areas = [
     margin: 4px 0;
 
     color: #93c5fd;
+
     font-size: 13px;
 }
 
 .cv-identity span {
     color: #64748b;
+
     font-size: 11px;
 }
 
+
+/* ==========================================================================
+   4. CV DOWNLOAD
+   ========================================================================== */
+
+.cv-download {
+    display: flex;
+    justify-content: center;
+
+    margin-left: auto;
+}
+
+.cv-download-button {
+    position: relative;
+
+    display: inline-flex;
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 9px 14px;
+
+    overflow: hidden;
+
+    border: 1px solid rgba(96, 165, 250, 0.25);
+    border-radius: 7px;
+
+    background: rgba(59, 130, 246, 0.12);
+    color: #dbeafe;
+
+    font-size: 11px;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.cv-download-button::before {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    left: -120%;
+
+    width: 70%;
+    height: 100%;
+
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(255, 255, 255, 0.10),
+            transparent);
+
+    transform: skewX(-20deg);
+
+    transition: left 0.55s ease;
+
+    pointer-events: none;
+}
+
+.cv-download-button:hover {
+    color: #ffffff;
+
+    background: rgba(59, 130, 246, 0.22);
+
+    border-color: rgba(96, 165, 250, 0.45);
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.20);
+}
+
+.cv-download-button:hover::before {
+    left: 140%;
+}
+
+.cv-download-button:active {
+    transform: translateY(0);
+}
+
+.cv-download-button svg {
+    flex-shrink: 0;
+}
+
+
+/* ==========================================================================
+   5. CV SECTIONS
+   ========================================================================== */
+
 .cv-section {
     margin-bottom: 20px;
-    border-bottom: 1px solid #263241;
     padding-bottom: 18px;
-    /* margin-bottom: 18px; */
+
+    border-bottom: 1px solid #263241;
+
+    animation: sectionReveal 0.5s ease-out both;
 }
+
+
+/* --------------------------------------------------------------------------
+   Section Title
+   -------------------------------------------------------------------------- */
 
 .section-title {
     display: flex;
     align-items: center;
+
     gap: 8px;
 
     margin-bottom: 10px;
 
     color: #93c5fd;
+
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.section-title:hover {
+    transform: translateX(3px);
 }
 
 .section-title h3 {
     margin: 0;
 
     color: #e2e8f0;
+
     font-size: 13px;
+
+    transition: color 0.25s ease;
 }
+
+.section-title:hover h3 {
+    color: #f8fafc;
+}
+
+
+/* --------------------------------------------------------------------------
+   Section Animation Delays
+   -------------------------------------------------------------------------- */
+
+.cv-section:nth-child(1) {
+    animation-delay: 0.10s;
+}
+
+.cv-section:nth-child(2) {
+    animation-delay: 0.16s;
+}
+
+.cv-section:nth-child(3) {
+    animation-delay: 0.22s;
+}
+
+.cv-section:nth-child(4) {
+    animation-delay: 0.28s;
+}
+
+.cv-section:nth-child(5) {
+    animation-delay: 0.34s;
+}
+
+
+/* ==========================================================================
+   6. PROFILE
+   ========================================================================== */
 
 .profile,
 .education p {
     margin: 0;
 
     color: #94a3b8;
+
     font-size: 12px;
     line-height: 1.7;
 }
+
+
+/* ==========================================================================
+   7. AREAS
+   ========================================================================== */
 
 .areas {
     display: grid;
@@ -353,6 +535,7 @@ const areas = [
 .area {
     display: flex;
     align-items: flex-start;
+
     gap: 10px;
 
     padding: 12px;
@@ -361,12 +544,56 @@ const areas = [
     border-radius: 7px;
 
     background: #111827;
-
     color: #93c5fd;
+
+    animation: cardReveal 0.45s ease-out both;
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        background 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.area:nth-child(1) {
+    animation-delay: 0.10s;
+}
+
+.area:nth-child(2) {
+    animation-delay: 0.16s;
+}
+
+.area:nth-child(3) {
+    animation-delay: 0.22s;
+}
+
+.area:nth-child(4) {
+    animation-delay: 0.28s;
+}
+
+.area:nth-child(5) {
+    animation-delay: 0.34s;
+}
+
+.area:nth-child(6) {
+    animation-delay: 0.40s;
+}
+
+.area:hover {
+    background: #131e31;
+
+    border-color: rgba(96, 165, 250, 0.40);
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.20),
+        0 0 0 1px rgba(96, 165, 250, 0.04);
+
+    transform: translateY(-4px);
 }
 
 .area strong {
     color: #f8fafc;
+
     font-size: 11px;
 }
 
@@ -374,13 +601,20 @@ const areas = [
     margin: 4px 0 0;
 
     color: #64748b;
+
     font-size: 10px;
     line-height: 1.5;
 }
 
+
+/* ==========================================================================
+   8. TECHNOLOGIES
+   ========================================================================== */
+
 .technologies {
     display: flex;
     flex-wrap: wrap;
+
     gap: 7px;
 }
 
@@ -397,9 +631,9 @@ const areas = [
 }
 
 
-/* =========================================
-   EXPERIENCIA LABORAL
-   ========================================= */
+/* ==========================================================================
+   9. EXPERIENCE
+   ========================================================================== */
 
 .experience-section {
     margin-top: 20px;
@@ -407,34 +641,58 @@ const areas = [
 
 .experience {
     position: relative;
-    padding: 18px 20px;
-    margin-top: 12px;
 
-    background: rgba(15, 23, 42, 0.55);
+    margin-top: 12px;
+    padding: 18px 20px;
+
     border: 1px solid rgba(148, 163, 184, 0.16);
     border-radius: 10px;
+
+    background: rgba(15, 23, 42, 0.55);
+
+    animation: experienceReveal 0.55s ease-out both;
 
     transition:
         border-color 0.2s ease,
         background 0.2s ease,
-        transform 0.2s ease;
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.experience:nth-child(1) {
+    animation-delay: 0.10s;
+}
+
+.experience:nth-child(2) {
+    animation-delay: 0.18s;
+}
+
+.experience:nth-child(3) {
+    animation-delay: 0.26s;
 }
 
 .experience:hover {
     background: rgba(15, 23, 42, 0.75);
+
     border-color: rgba(96, 165, 250, 0.35);
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.20),
+        0 0 0 1px rgba(96, 165, 250, 0.04);
+
     transform: translateY(-2px);
 }
 
 
-/* =========================================
-   ENCABEZADO
-   ========================================= */
+/* --------------------------------------------------------------------------
+   Experience Header
+   -------------------------------------------------------------------------- */
 
 .experience-header {
     display: flex;
-    justify-content: space-between;
     align-items: flex-start;
+    justify-content: space-between;
+
     gap: 20px;
 
     padding-bottom: 14px;
@@ -446,15 +704,16 @@ const areas = [
 .experience-header h4 {
     margin: 0;
 
-    font-size: 16px;
-    line-height: 1.4;
-    font-weight: 500;
-
     color: #e2e8f0;
+
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.4;
 }
 
 .experience-header h4 b {
     color: #f8fafc;
+
     font-weight: 700;
 }
 
@@ -463,8 +722,9 @@ const areas = [
 
     margin-top: 5px;
 
-    font-size: 12px;
     color: #94a3b8;
+
+    font-size: 12px;
 }
 
 .experience-date {
@@ -472,22 +732,35 @@ const areas = [
 
     padding: 5px 9px;
 
+    border: 1px solid rgba(59, 130, 246, 0.20);
     border-radius: 6px;
+
+    background: rgba(59, 130, 246, 0.10);
+    color: #93c5fd;
 
     font-size: 11px;
     font-weight: 600;
 
-    color: #93c5fd;
-    background: rgba(59, 130, 246, 0.10);
-    border: 1px solid rgba(59, 130, 246, 0.20);
-
     white-space: nowrap;
+
+    transition:
+        background 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.experience:hover .experience-date {
+    background: rgba(59, 130, 246, 0.18);
+
+    border-color: rgba(96, 165, 250, 0.40);
+
+    transform: translateY(-1px);
 }
 
 
-/* =========================================
-   DESCRIPCIÓN / RESPONSABILIDADES
-   ========================================= */
+/* --------------------------------------------------------------------------
+   Experience Description
+   -------------------------------------------------------------------------- */
 
 .experience-description {
     color: #cbd5e1;
@@ -503,13 +776,13 @@ const areas = [
 .experience-description li {
     position: relative;
 
-    padding-left: 18px;
     margin-bottom: 10px;
+    padding-left: 18px;
+
+    color: #cbd5e1;
 
     font-size: 13px;
     line-height: 1.65;
-
-    color: #cbd5e1;
 }
 
 .experience-description li:last-child {
@@ -520,8 +793,8 @@ const areas = [
     content: '›';
 
     position: absolute;
-    left: 0;
     top: 0;
+    left: 0;
 
     color: #60a5fa;
 
@@ -531,17 +804,19 @@ const areas = [
 
 .experience-description strong {
     color: #f1f5f9;
+
     font-weight: 600;
 }
 
 
-/* =========================================
-   TECNOLOGÍAS
-   ========================================= */
+/* --------------------------------------------------------------------------
+   Experience Technologies
+   -------------------------------------------------------------------------- */
 
 .experience-technologies {
     display: flex;
     flex-wrap: wrap;
+
     gap: 7px;
 
     margin-top: 18px;
@@ -556,33 +831,590 @@ const areas = [
 
     padding: 4px 8px;
 
+    border: 1px solid rgba(96, 165, 250, 0.18);
     border-radius: 5px;
+
+    background: rgba(59, 130, 246, 0.10);
+    color: #bfdbfe;
 
     font-size: 10px;
     font-weight: 600;
     letter-spacing: 0.2px;
 
-    color: #bfdbfe;
-
-    background: rgba(59, 130, 246, 0.10);
-    border: 1px solid rgba(96, 165, 250, 0.18);
-
     transition:
+        transform 0.2s ease,
         background 0.2s ease,
         border-color 0.2s ease;
 }
 
 .experience-technologies span:hover {
     background: rgba(59, 130, 246, 0.18);
+
     border-color: rgba(96, 165, 250, 0.35);
+
+    transform: translateY(-2px) scale(1.03);
 }
 
 
-/* =========================================
-   RESPONSIVE
-   ========================================= */
+/* ==========================================================================
+   10. EDUCATION
+   ========================================================================== */
+
+.education {
+    margin-top: 20px;
+}
+
+.education-list {
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+
+    margin-top: 12px;
+}
+
+.education-item {
+    display: flex;
+
+    gap: 14px;
+
+    padding: 15px 17px;
+
+    border: 1px solid rgba(148, 163, 184, 0.16);
+    border-radius: 9px;
+
+    background: rgba(15, 23, 42, 0.55);
+
+    animation: educationReveal 0.5s ease-out both;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.education-item:nth-child(1) {
+    animation-delay: 0.12s;
+}
+
+.education-item:nth-child(2) {
+    animation-delay: 0.20s;
+}
+
+.education-item:nth-child(3) {
+    animation-delay: 0.28s;
+}
+
+.education-item:hover {
+    background: rgba(15, 23, 42, 0.75);
+
+    border-color: rgba(96, 165, 250, 0.30);
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.20),
+        0 0 0 1px rgba(96, 165, 250, 0.04);
+
+    transform: translateX(2px);
+}
+
+
+/* --------------------------------------------------------------------------
+   Education Icon
+   -------------------------------------------------------------------------- */
+
+.education-icon {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border: 1px solid rgba(96, 165, 250, 0.18);
+    border-radius: 8px;
+
+    background: rgba(59, 130, 246, 0.10);
+    color: #93c5fd;
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.education-item:hover .education-icon {
+    background: rgba(59, 130, 246, 0.18);
+
+    border-color: rgba(96, 165, 250, 0.35);
+
+    transform: scale(1.08) rotate(-2deg);
+}
+
+
+/* --------------------------------------------------------------------------
+   Education Content
+   -------------------------------------------------------------------------- */
+
+.education-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.education-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    gap: 15px;
+}
+
+.education-header h4 {
+    margin: 0;
+
+    color: #f1f5f9;
+
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.education-institution {
+    margin: 4px 0 0;
+
+    color: #94a3b8;
+
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+.education-date {
+    flex-shrink: 0;
+
+    padding: 4px 8px;
+
+    border: 1px solid rgba(96, 165, 250, 0.18);
+    border-radius: 5px;
+
+    background: rgba(59, 130, 246, 0.10);
+    color: #93c5fd;
+
+    font-size: 10px;
+    font-weight: 600;
+
+    white-space: nowrap;
+}
+
+.education-location {
+    display: block;
+
+    margin-top: 7px;
+
+    color: #64748b;
+
+    font-size: 11px;
+}
+
+
+/* ==========================================================================
+   11. TECHNICAL SKILLS
+   ========================================================================== */
+
+.technical-skills {
+    margin-top: 24px;
+}
+
+.technical-skills-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 12px;
+
+    margin-top: 14px;
+}
+
+.technical-skill {
+    position: relative;
+
+    padding: 16px;
+
+    overflow: hidden;
+
+    border: 1px solid rgba(148, 163, 184, 0.16);
+    border-radius: 10px;
+
+    background:
+        linear-gradient(145deg,
+            rgba(30, 41, 59, 0.72),
+            rgba(15, 23, 42, 0.62));
+
+    animation: skillReveal 0.5s ease-out both;
+
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+/* --------------------------------------------------------------------------
+   Skill Animation Delays
+   -------------------------------------------------------------------------- */
+
+.technical-skill:nth-child(1) {
+    border-left: 2px solid rgba(96, 165, 250, 0.45);
+    animation-delay: 0.08s;
+}
+
+.technical-skill:nth-child(2) {
+    border-left: 2px solid rgba(129, 140, 248, 0.45);
+    animation-delay: 0.14s;
+}
+
+.technical-skill:nth-child(3) {
+    border-left: 2px solid rgba(45, 212, 191, 0.40);
+    animation-delay: 0.20s;
+}
+
+.technical-skill:nth-child(4) {
+    border-left: 2px solid rgba(56, 189, 248, 0.40);
+    animation-delay: 0.26s;
+}
+
+.technical-skill:nth-child(5) {
+    border-left: 2px solid rgba(167, 139, 250, 0.40);
+    animation-delay: 0.32s;
+}
+
+.technical-skill:nth-child(6) {
+    border-left: 2px solid rgba(251, 191, 36, 0.40);
+    animation-delay: 0.38s;
+}
+
+.technical-skill:nth-child(7) {
+    border-left: 2px solid rgba(52, 211, 153, 0.40);
+    animation-delay: 0.44s;
+}
+
+
+/* --------------------------------------------------------------------------
+   Decorative Line
+   -------------------------------------------------------------------------- */
+
+.technical-skill::before {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 2px;
+
+    background: rgba(96, 165, 250, 0.35);
+
+    opacity: 0.6;
+
+    transition:
+        opacity 0.2s ease,
+        background 0.2s ease;
+}
+
+
+/* --------------------------------------------------------------------------
+   Skill Hover
+   -------------------------------------------------------------------------- */
+
+.technical-skill:hover {
+    background:
+        linear-gradient(145deg,
+            rgba(30, 41, 59, 0.90),
+            rgba(15, 23, 42, 0.80));
+
+    border-color: rgba(96, 165, 250, 0.35);
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.20),
+        0 0 0 1px rgba(96, 165, 250, 0.04);
+
+    transform: translateY(-3px);
+}
+
+.technical-skill:hover::before {
+    background: rgba(96, 165, 250, 0.75);
+
+    opacity: 1;
+}
+
+
+/* --------------------------------------------------------------------------
+   Skill Header
+   -------------------------------------------------------------------------- */
+
+.technical-skill-header {
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+
+    margin-bottom: 12px;
+    padding-bottom: 10px;
+
+    border-bottom: 1px solid rgba(148, 163, 184, 0.10);
+
+    color: #93c5fd;
+}
+
+.technical-skill-header svg {
+    width: 28px;
+    height: 28px;
+
+    flex-shrink: 0;
+
+    padding: 5px;
+
+    border: 1px solid rgba(96, 165, 250, 0.15);
+    border-radius: 7px;
+
+    background: rgba(59, 130, 246, 0.10);
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease;
+}
+
+.technical-skill:hover .technical-skill-header svg {
+    background: rgba(59, 130, 246, 0.18);
+
+    transform: rotate(-4deg) scale(1.08);
+}
+
+.technical-skill-header h4 {
+    margin: 0;
+
+    color: #f1f5f9;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    letter-spacing: 0.3px;
+}
+
+
+/* --------------------------------------------------------------------------
+   Skill Tags
+   -------------------------------------------------------------------------- */
+
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 6px;
+}
+
+.skill-tags span {
+    display: inline-flex;
+    align-items: center;
+
+    min-height: 24px;
+
+    padding: 4px 8px;
+
+    border: 1px solid rgba(96, 165, 250, 0.14);
+    border-radius: 5px;
+
+    background: rgba(59, 130, 246, 0.08);
+    color: #bfdbfe;
+
+    font-size: 10px;
+    font-weight: 600;
+
+    letter-spacing: 0.15px;
+
+    animation: tagReveal 0.35s ease-out both;
+
+    transition:
+        background 0.15s ease,
+        border-color 0.15s ease,
+        color 0.15s ease,
+        transform 0.15s ease;
+}
+
+.skill-tags span:nth-child(1) {
+    animation-delay: 0.05s;
+}
+
+.skill-tags span:nth-child(2) {
+    animation-delay: 0.09s;
+}
+
+.skill-tags span:nth-child(3) {
+    animation-delay: 0.13s;
+}
+
+.skill-tags span:nth-child(4) {
+    animation-delay: 0.17s;
+}
+
+.skill-tags span:nth-child(5) {
+    animation-delay: 0.21s;
+}
+
+.skill-tags span:nth-child(6) {
+    animation-delay: 0.25s;
+}
+
+.skill-tags span:nth-child(7) {
+    animation-delay: 0.29s;
+}
+
+.skill-tags span:hover {
+    color: #dbeafe;
+
+    background: rgba(59, 130, 246, 0.17);
+
+    border-color: rgba(96, 165, 250, 0.32);
+
+    transform: translateY(-1px);
+}
+
+
+/* ==========================================================================
+   12. KEYFRAMES
+   ========================================================================== */
+
+@keyframes cvFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes headerReveal {
+    from {
+        opacity: 0;
+        transform: translateY(-12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes avatarReveal {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+@keyframes sectionReveal {
+    from {
+        opacity: 0;
+        transform: translateY(14px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes cardReveal {
+    from {
+        opacity: 0;
+        transform: translateY(10px) scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+
+@keyframes experienceReveal {
+    from {
+        opacity: 0;
+        transform: translateX(-12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+@keyframes educationReveal {
+    from {
+        opacity: 0;
+        transform: translateX(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+@keyframes skillReveal {
+    from {
+        opacity: 0;
+        transform: translateY(12px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+
+@keyframes tagReveal {
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* ==========================================================================
+   13. RESPONSIVE
+   ========================================================================== */
 
 @media (max-width: 700px) {
+
+    /* ----------------------------------------------------------------------
+       Experience
+       ---------------------------------------------------------------------- */
+
     .experience {
         padding: 15px;
     }
@@ -608,151 +1440,12 @@ const areas = [
     .experience-technologies span {
         font-size: 9px;
     }
-}
-
-/* =========================================
-   EDUCACIÓN
-   ========================================= */
-
-.education {
-    margin-top: 20px;
-}
-
-.education-list {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-
-    margin-top: 12px;
-}
-
-.education-item {
-    display: flex;
-    gap: 14px;
-
-    padding: 15px 17px;
-
-    background: rgba(15, 23, 42, 0.55);
-    border: 1px solid rgba(148, 163, 184, 0.16);
-    border-radius: 9px;
-
-    transition:
-        background 0.2s ease,
-        border-color 0.2s ease,
-        transform 0.2s ease;
-}
-
-.education-item:hover {
-    background: rgba(15, 23, 42, 0.75);
-    border-color: rgba(96, 165, 250, 0.30);
-
-    transform: translateX(2px);
-}
 
 
-/* =========================================
-   ICONO
-   ========================================= */
+    /* ----------------------------------------------------------------------
+       Education
+       ---------------------------------------------------------------------- */
 
-.education-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    flex-shrink: 0;
-
-    width: 38px;
-    height: 38px;
-
-    border-radius: 8px;
-
-    color: #93c5fd;
-
-    background: rgba(59, 130, 246, 0.10);
-    border: 1px solid rgba(96, 165, 250, 0.18);
-}
-
-
-/* =========================================
-   CONTENIDO
-   ========================================= */
-
-.education-content {
-    flex: 1;
-    min-width: 0;
-}
-
-.education-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-
-    gap: 15px;
-}
-
-.education-header h4 {
-    margin: 0;
-
-    font-size: 14px;
-    line-height: 1.4;
-
-    color: #f1f5f9;
-    font-weight: 600;
-}
-
-.education-institution {
-    margin: 4px 0 0;
-
-    font-size: 12px;
-    line-height: 1.4;
-
-    color: #94a3b8;
-}
-
-
-/* =========================================
-   FECHA
-   ========================================= */
-
-.education-date {
-    flex-shrink: 0;
-
-    padding: 4px 8px;
-
-    border-radius: 5px;
-
-    font-size: 10px;
-    font-weight: 600;
-
-    color: #93c5fd;
-
-    background: rgba(59, 130, 246, 0.10);
-    border: 1px solid rgba(96, 165, 250, 0.18);
-
-    white-space: nowrap;
-}
-
-
-/* =========================================
-   UBICACIÓN
-   ========================================= */
-
-.education-location {
-    display: block;
-
-    margin-top: 7px;
-
-    font-size: 11px;
-
-    color: #64748b;
-}
-
-
-/* =========================================
-   RESPONSIVE
-   ========================================= */
-
-@media (max-width: 700px) {
     .education-item {
         padding: 13px;
     }
@@ -769,225 +1462,11 @@ const areas = [
     .education-header h4 {
         font-size: 13px;
     }
-}
 
 
-/* =========================================
-   HABILIDADES TÉCNICAS
-   ========================================= */
-
-.technical-skills {
-    margin-top: 24px;
-}
-
-/* Grid principal */
-.technical-skills-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 12px;
-    margin-top: 14px;
-}
-
-/* Tarjeta */
-.technical-skill {
-    position: relative;
-    padding: 16px;
-    background:
-        linear-gradient(145deg,
-            rgba(30, 41, 59, 0.72),
-            rgba(15, 23, 42, 0.62));
-
-    border: 1px solid rgba(148, 163, 184, 0.16);
-    border-radius: 10px;
-
-    overflow: hidden;
-
-    transition:
-        transform 0.2s ease,
-        border-color 0.2s ease,
-        background 0.2s ease,
-        box-shadow 0.2s ease;
-}
-
-/* Línea superior decorativa */
-.technical-skill::before {
-    content: '';
-
-    position: absolute;
-    top: 0;
-    left: 0;
-
-    width: 100%;
-    height: 2px;
-
-    background: rgba(96, 165, 250, 0.35);
-
-    opacity: 0.6;
-
-    transition:
-        opacity 0.2s ease,
-        background 0.2s ease;
-}
-
-/* Efecto hover */
-.technical-skill:hover {
-    transform: translateY(-3px);
-
-    background:
-        linear-gradient(145deg,
-            rgba(30, 41, 59, 0.90),
-            rgba(15, 23, 42, 0.80));
-
-    border-color: rgba(96, 165, 250, 0.35);
-
-    box-shadow:
-        0 8px 20px rgba(0, 0, 0, 0.20);
-}
-
-.technical-skill:hover::before {
-    opacity: 1;
-    background: rgba(96, 165, 250, 0.75);
-}
-
-
-/* =========================================
-   HEADER DE CATEGORÍA
-   ========================================= */
-
-.technical-skill-header {
-    display: flex;
-    align-items: center;
-    gap: 9px;
-
-    margin-bottom: 12px;
-    padding-bottom: 10px;
-
-    border-bottom: 1px solid rgba(148, 163, 184, 0.10);
-
-    color: #93c5fd;
-}
-
-.technical-skill-header svg {
-    flex-shrink: 0;
-
-    padding: 5px;
-
-    width: 28px;
-    height: 28px;
-
-    border-radius: 7px;
-
-    background: rgba(59, 130, 246, 0.10);
-
-    border: 1px solid rgba(96, 165, 250, 0.15);
-}
-
-.technical-skill-header h4 {
-    margin: 0;
-
-    font-size: 12px;
-    font-weight: 700;
-
-    letter-spacing: 0.3px;
-
-    color: #f1f5f9;
-}
-
-
-/* =========================================
-   TAGS / TECNOLOGÍAS
-   ========================================= */
-
-.skill-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-}
-
-.skill-tags span {
-    display: inline-flex;
-    align-items: center;
-
-    min-height: 24px;
-
-    padding: 4px 8px;
-
-    border-radius: 5px;
-
-    font-size: 10px;
-    font-weight: 600;
-
-    letter-spacing: 0.15px;
-
-    color: #bfdbfe;
-
-    background: rgba(59, 130, 246, 0.08);
-
-    border: 1px solid rgba(96, 165, 250, 0.14);
-
-    transition:
-        background 0.15s ease,
-        border-color 0.15s ease,
-        color 0.15s ease,
-        transform 0.15s ease;
-}
-
-.skill-tags span:hover {
-    transform: translateY(-1px);
-
-    color: #dbeafe;
-
-    background: rgba(59, 130, 246, 0.17);
-
-    border-color: rgba(96, 165, 250, 0.32);
-}
-
-
-/* =========================================
-   DIFERENCIACIÓN VISUAL
-   ========================================= */
-
-/* Primera tarjeta */
-.technical-skill:nth-child(1) {
-    border-left: 2px solid rgba(96, 165, 250, 0.45);
-}
-
-/* Backend */
-.technical-skill:nth-child(2) {
-    border-left: 2px solid rgba(129, 140, 248, 0.45);
-}
-
-/* Bases de datos */
-.technical-skill:nth-child(3) {
-    border-left: 2px solid rgba(45, 212, 191, 0.40);
-}
-
-/* Desarrollo web */
-.technical-skill:nth-child(4) {
-    border-left: 2px solid rgba(56, 189, 248, 0.40);
-}
-
-/* DevOps */
-.technical-skill:nth-child(5) {
-    border-left: 2px solid rgba(167, 139, 250, 0.40);
-}
-
-/* Herramientas */
-.technical-skill:nth-child(6) {
-    border-left: 2px solid rgba(251, 191, 36, 0.40);
-}
-
-/* Metodologías */
-.technical-skill:nth-child(7) {
-    border-left: 2px solid rgba(52, 211, 153, 0.40);
-}
-
-
-/* =========================================
-   RESPONSIVE
-   ========================================= */
-
-@media (max-width: 700px) {
+    /* ----------------------------------------------------------------------
+       Technical Skills
+       ---------------------------------------------------------------------- */
 
     .technical-skills {
         margin-top: 20px;
@@ -1016,80 +1495,16 @@ const areas = [
 
     .skill-tags span {
         min-height: 22px;
+
         padding: 3px 7px;
+
         font-size: 9px;
     }
-}
 
 
-/* =========================================
-   DESCARGAR CV
-   ========================================= */
-
-.cv-download {
-    display: flex;
-    justify-content: center;
-
-    /* margin-top: 20px; */
-    /* padding-top: 16px; */
-
-    /* border-top: 1px solid rgba(148, 163, 184, 0.12); */
-}
-
-.cv-download-button {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-
-    padding: 9px 14px;
-
-    border-radius: 7px;
-
-    color: #dbeafe;
-    background: rgba(59, 130, 246, 0.12);
-
-    border: 1px solid rgba(96, 165, 250, 0.25);
-
-    font-size: 11px;
-    font-weight: 600;
-
-    text-decoration: none;
-
-    cursor: pointer;
-
-    transition:
-        background 0.2s ease,
-        border-color 0.2s ease,
-        color 0.2s ease,
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
-}
-
-.cv-download-button:hover {
-    color: #ffffff;
-
-    background: rgba(59, 130, 246, 0.22);
-
-    border-color: rgba(96, 165, 250, 0.45);
-
-    transform: translateY(-2px);
-
-    box-shadow:
-        0 5px 15px rgba(0, 0, 0, 0.20);
-}
-
-.cv-download-button:active {
-    transform: translateY(0);
-}
-
-.cv-download-button svg {
-    flex-shrink: 0;
-}
-
-
-/* Responsive */
-
-@media (max-width: 700px) {
+    /* ----------------------------------------------------------------------
+       CV Download
+       ---------------------------------------------------------------------- */
 
     .cv-download {
         justify-content: stretch;
@@ -1097,7 +1512,55 @@ const areas = [
 
     .cv-download-button {
         width: 100%;
+
         justify-content: center;
+    }
+}
+
+
+/* ==========================================================================
+   14. REDUCED MOTION
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .cv-view,
+    .cv-header,
+    .cv-avatar,
+    .cv-section,
+    .area,
+    .experience,
+    .education-item,
+    .technical-skill,
+    .skill-tags span {
+        animation: none;
+    }
+
+    .cv-view,
+    .cv-header,
+    .cv-avatar,
+    .cv-section,
+    .area,
+    .experience,
+    .education-item,
+    .technical-skill,
+    .skill-tags span {
+        transform: none;
+        opacity: 1;
+    }
+
+    .area,
+    .experience,
+    .education-item,
+    .technical-skill,
+    .cv-download-button,
+    .education-icon,
+    .technical-skill-header svg {
+        transition: none;
+    }
+
+    .cv-download-button::before {
+        display: none;
     }
 }
 </style>

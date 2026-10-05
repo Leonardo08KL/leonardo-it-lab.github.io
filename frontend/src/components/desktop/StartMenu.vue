@@ -238,6 +238,292 @@
 
     font-size: 12px;
 }
+
+/* =========================================
+   START MENU
+========================================= */
+
+.start-menu {
+    position: absolute;
+
+    left: 8px;
+    bottom: 60px;
+
+    z-index: 300;
+
+    width: 340px;
+    max-height: calc(100vh - 120px);
+
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+
+    border: 1px solid #334155;
+    border-radius: 10px;
+
+    background: rgba(15, 23, 42, 0.98);
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.5);
+
+    backdrop-filter: blur(15px);
+}
+
+.start-menu-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 14px;
+
+    border-bottom: 1px solid #263241;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.profile-avatar {
+    width: 38px;
+    height: 38px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 8px;
+
+    background: #1e293b;
+
+    font-size: 19px;
+}
+
+.profile-info strong,
+.profile-info span {
+    display: block;
+}
+
+.profile-info strong {
+    color: #f8fafc;
+    font-size: 12px;
+}
+
+.profile-info span {
+    margin-top: 2px;
+
+    color: #64748b;
+    font-size: 10px;
+}
+
+.close-menu {
+    width: 30px;
+    height: 30px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 5px;
+
+    background: transparent;
+    color: #64748b;
+
+    cursor: pointer;
+}
+
+.close-menu:hover {
+    background: #1e293b;
+    color: #f8fafc;
+}
+
+.start-menu-search {
+    padding: 12px;
+}
+
+.start-menu-search input {
+    width: 100%;
+
+    padding: 9px 11px;
+
+    border: 1px solid #334155;
+    border-radius: 6px;
+
+    outline: none;
+
+    background: #0b1220;
+    color: #e2e8f0;
+
+    font-size: 11px;
+}
+
+.start-menu-search input::placeholder {
+    color: #64748b;
+}
+
+.start-menu-search input:focus {
+    border-color: #3b82f6;
+}
+
+.start-menu-section {
+    min-height: 0;
+
+    padding: 0 12px 12px;
+
+    overflow-y: auto;
+}
+
+.section-title {
+    margin-bottom: 8px;
+
+    color: #64748b;
+
+    font-size: 10px;
+    font-weight: 600;
+
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.applications {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 5px;
+}
+
+.application-item {
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+
+    min-width: 0;
+
+    padding: 9px;
+
+    border-radius: 7px;
+
+    background: transparent;
+    color: #cbd5e1;
+
+    text-align: left;
+
+    cursor: pointer;
+}
+
+.application-item:hover {
+    background: #1e293b;
+}
+
+.application-icon {
+    width: 30px;
+    height: 30px;
+
+    display: grid;
+    place-items: center;
+
+    flex-shrink: 0;
+
+    border-radius: 6px;
+
+    background: #1e293b;
+    color: #93c5fd;
+}
+
+.application-info {
+    min-width: 0;
+}
+
+.application-info strong,
+.application-info span {
+    display: block;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.application-info strong {
+    color: #e2e8f0;
+    font-size: 10px;
+}
+
+.application-info span {
+    margin-top: 2px;
+
+    color: #64748b;
+    font-size: 8px;
+}
+
+.start-menu-footer {
+    padding: 10px 14px;
+
+    border-top: 1px solid #263241;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    color: #64748b;
+
+    font-family: monospace;
+    font-size: 9px;
+}
+
+/* =========================================
+   TRANSITIONS
+========================================= */
+
+.start-menu-enter-active,
+.start-menu-leave-active {
+    transition:
+        opacity 0.15s ease,
+        transform 0.15s ease;
+}
+
+.start-menu-enter-from,
+.start-menu-leave-to {
+    opacity: 0;
+    transform: translateY(8px);
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 700px) {
+    .top-status>span:not(.system-status) {
+        display: none;
+    }
+
+    .taskbar-app span {
+        display: none;
+    }
+
+    .taskbar-app {
+        width: 38px;
+        justify-content: center;
+        padding: 0;
+    }
+
+    .start-menu {
+        width: calc(100vw - 16px);
+    }
+
+    .applications {
+        grid-template-columns: 1fr;
+    }
+
+    .app-window:not(.maximized) {
+        width: calc(100% - 20px) !important;
+        height: calc(100% - 20px) !important;
+    }
+}
 </style>
 
 <script setup>
@@ -312,6 +598,12 @@ const applications = [
         type: 'about',
         title: 'About',
         description: 'Sobre Leonardo',
+        icon: User
+    },
+    {
+        type: 'personal',
+        title: 'Personal',
+        description: 'Información personal',
         icon: User
     }
 ]

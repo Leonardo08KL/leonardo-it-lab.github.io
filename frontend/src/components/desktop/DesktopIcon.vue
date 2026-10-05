@@ -1,58 +1,84 @@
 <style>
+/* =========================================
+   DESKTOP ICONS
+========================================= */
+
+.desktop-icons {
+    position: absolute;
+
+    top: 20px;
+    left: 18px;
+
+    z-index: 2;
+
+    display: grid;
+
+    grid-template-columns: 86px;
+
+    gap: 8px;
+}
+
 .desktop-icon {
-    width: 90px;
+    width: 82px;
+    min-height: 82px;
 
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 7px;
+    justify-content: center;
 
-    padding: 10px 6px;
+    gap: 6px;
 
-    background: transparent;
+    padding: 7px;
+
     border: 1px solid transparent;
     border-radius: 8px;
 
-    color: white;
+    background: transparent;
+    color: #cbd5e1;
 
-    cursor: default;
+    cursor: pointer;
+
     user-select: none;
+
+    transition:
+        background 0.15s ease,
+        border-color 0.15s ease;
 }
 
 .desktop-icon:hover {
-    background: rgba(255, 255, 255, 0.08);
+    background: rgba(30, 41, 59, 0.75);
 }
 
 .desktop-icon.selected {
-    background: rgba(96, 165, 250, 0.18);
-    border-color: rgba(96, 165, 250, 0.3);
+    border-color: rgba(96, 165, 250, 0.45);
+    background: rgba(59, 130, 246, 0.16);
 }
 
 .desktop-icon-image {
-    width: 48px;
-    height: 48px;
+    width: 42px;
+    height: 42px;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: grid;
+    place-items: center;
 
     color: #93c5fd;
-
-    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
 }
 
 .desktop-icon-title {
-    max-width: 85px;
+    max-width: 76px;
+
+    overflow: hidden;
 
     color: #e2e8f0;
 
-    font-size: 12px;
-    line-height: 15px;
+    font-size: 11px;
+    line-height: 1.2;
 
     text-align: center;
 
-    overflow: hidden;
     text-overflow: ellipsis;
+    white-space: nowrap;
 }
 </style>
 <script setup>

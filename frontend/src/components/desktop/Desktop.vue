@@ -24,7 +24,7 @@ const {
     minimizeWindow,
     focusWindow,
     maximizeWindow,
-    moveWindow
+    moveWindow,
 } = useWindows()
 
 const {
@@ -98,22 +98,77 @@ const handlePower = () => {
             </div>
 
             <div class="windows-container">
-
-                <AppWindow v-for="window in windows" :key="window.id" :window="window"
-                    :title="getWindowDefinition(window.type).title" :icon="getWindowDefinition(window.type).icon"
-                    :width="getWindowDefinition(window.type).width" :height="getWindowDefinition(window.type).height"
-                    @close="closeWindow" @minimize="minimizeWindow" @maximize="maximizeWindow" @focus="focusWindow"
-                    @move="moveWindow">
-
-                    <component :is="windowComponents[window.type]" />
-
-                </AppWindow>
+                <Transition v-for="window in windows" :key="window.id" name="window">
+                    <AppWindow :window="window" :title="getWindowDefinition(window.type).title"
+                        :icon="getWindowDefinition(window.type).icon" :width="getWindowDefinition(window.type).width"
+                        :height="getWindowDefinition(window.type).height" @close="closeWindow"
+                        @minimize="minimizeWindow" @maximize="maximizeWindow" @focus="focusWindow" @move="moveWindow">
+                        <component :is="windowComponents[window.type]" />
+                    </AppWindow>
+                </Transition>
 
             </div>
 
         </section>
 
-        <Taskbar :windows="windows" @toggle-menu="toggleStartMenu" @focus-window="focusWindow" @power="handlePower" />
+        <Taskbar :windows="windows" @toggle-menu="toggleStartMenu" @focus-window="focusWindow" @power="handlePower"
+            @change-language="changeLanguage" />
 
     </main>
 </template>
+
+<style>
+/* =========================================
+   WINDOWS CONTAINER
+========================================= */
+
+.windows-container {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 10;
+
+    pointer-events: none;
+}
+
+/* =========================================
+   DESKTOP
+========================================= */
+
+.desktop {
+    position: relative;
+
+    width: 100%;
+    height: 100vh;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(circle at 50% 35%,
+            #172033 0%,
+            #0b1220 45%,
+            #020617 100%);
+}
+
+/* =========================================
+   DESKTOP AREA
+========================================= */
+
+.desktop-area {
+    position: absolute;
+
+    top: 42px;
+    right: 0;
+    bottom: 52px;
+    left: 0;
+
+    overflow: auto;
+
+    scroll-behavior: smooth;
+    cursor: default;
+
+    min-width: 0;
+    min-height: 0;
+}
+</style>
