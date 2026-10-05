@@ -13,47 +13,47 @@ import {
 export const desktopIcons = [
     {
         type: 'about',
-        title: 'About',
+        title: 'desktop.about',
         icon: User
     },
     {
         type: 'cv',
-        title: 'CV',
+        title: 'desktop.cv',
         icon: FileText
     },
     {
         type: 'personal',
-        title: 'Personal',
+        title: 'desktop.personal',
         icon: UserRoundCheckIcon
     },
     {
         type: 'projects',
-        title: 'Projects',
+        title: 'desktop.projects',
         icon: FolderGit2
     },
     {
         type: 'skills',
-        title: 'Skills',
+        title: 'desktop.skills',
         icon: Code2
     },
     {
         type: 'linux',
-        title: 'Linux Lab',
+        title: 'desktop.linux',
         icon: Server
     },
     {
         type: 'terminal',
-        title: 'Terminal',
+        title: 'desktop.terminal',
         icon: Terminal
     },
     {
         type: 'network',
-        title: 'Network Lab',
+        title: 'desktop.network',
         icon: Network
     },
     {
         type: 'hardware',
-        title: 'Hardware',
+        title: 'desktop.hardware',
         icon: Cpu
-    },
+    }
 ]

@@ -528,16 +528,15 @@
 
 <script setup>
 import {
-    Terminal,
-    Network,
-    Server,
-    FolderGit2,
-    FileText,
     User,
-    Code2,
-    Cpu,
     X
 } from 'lucide-vue-next'
+import { useI18n } from 'vue-i18n'
+const { locale, t } = useI18n()
+
+import {
+    applications
+} from '../../data/applications'
 
 defineProps({
     visible: {
@@ -551,67 +550,13 @@ const emit = defineEmits([
     'close'
 ])
 
-const applications = [
-    {
-        type: 'terminal',
-        title: 'Terminal',
-        description: 'Linux command line',
-        icon: Terminal
-    },
-    {
-        type: 'network',
-        title: 'Network Lab',
-        description: 'Redes e infraestructura',
-        icon: Network
-    },
-    {
-        type: 'linux',
-        title: 'Linux Lab',
-        description: 'Administración Linux',
-        icon: Server
-    },
-    {
-        type: 'projects',
-        title: 'Projects',
-        description: 'Proyectos de desarrollo',
-        icon: FolderGit2
-    },
-    {
-        type: 'skills',
-        title: 'Skills',
-        description: 'Tecnologías y habilidades',
-        icon: Code2
-    },
-    {
-        type: 'hardware',
-        title: 'Hardware',
-        description: 'Soporte y mantenimiento',
-        icon: Cpu
-    },
-    {
-        type: 'cv',
-        title: 'CV',
-        description: 'Currículum profesional',
-        icon: FileText
-    },
-    {
-        type: 'about',
-        title: 'About',
-        description: 'Sobre Leonardo',
-        icon: User
-    },
-    {
-        type: 'personal',
-        title: 'Personal',
-        description: 'Información personal',
-        icon: User
-    }
-]
 
 const openApplication = (type) => {
     emit('open-window', type)
     emit('close')
 }
+
+
 </script>
 
 <template>
@@ -644,15 +589,15 @@ const openApplication = (type) => {
             <!-- SEARCH -->
             <div class="start-menu-search">
 
-                <input type="text" placeholder="Buscar aplicaciones..." />
-
+                <input type="text"
+                    :placeholder="t(locale === 'es' ? 'Buscar aplicaciones...' : 'Search applications...')" />
             </div>
 
             <!-- APPLICATIONS -->
             <div class="start-menu-section">
 
                 <div class="section-title">
-                    Aplicaciones
+                    {{ t(locale === 'es' ? 'Aplicaciones' : 'Applications') }}
                 </div>
 
                 <div class="applications">
@@ -667,11 +612,11 @@ const openApplication = (type) => {
                         <div class="application-info">
 
                             <strong>
-                                {{ application.title }}
+                                {{ t(application.title) }}
                             </strong>
 
                             <span>
-                                {{ application.description }}
+                                {{ t(application.description) }}
                             </span>
 
                         </div>

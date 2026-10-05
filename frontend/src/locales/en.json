@@ -1,0 +1,32 @@
+{
+    "desktop": {
+        "about": "About",
+        "cv": "CV",
+        "personal": "Personal",
+        "projects": "Projects",
+        "skills": "Skills",
+        "linux": "Linux Lab",
+        "terminal": "Terminal",
+        "network": "Network Lab",
+        "hardware": "Hardware"
+    },
+    "taskbar": {
+        "language": "Language",
+        "clock": "Clock",
+        "online": "Online",
+        "offline": "Offline",
+        "shutdown": "Shutdown",
+        "start": "Start"
+    },
+    "appDescription": {
+        "about": "About Leonardo",
+        "cv": "Professional CV",
+        "personal": "Personal Information",
+        "projects": "Development Projects",
+        "skills": "Skills and Knowledge",
+        "linux": "Linux Lab",
+        "terminal": "Command Terminal",
+        "network": "Network Lab",
+        "hardware": "Support and Maintenance"
+    }
+}

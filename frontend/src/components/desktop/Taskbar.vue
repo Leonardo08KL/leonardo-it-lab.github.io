@@ -1,5 +1,7 @@
 <script setup>
 
+import { useI18n } from 'vue-i18n'
+
 import {
     Menu,
     Terminal,
@@ -13,8 +15,8 @@ import {
 } from 'lucide-vue-next'
 
 import { useClock } from '../../composables/useClock'
-import { useLanguage } from '../../composables/useLanguage'
-
+// import { useLanguage } from '../../composables/useLanguage'
+import { taskBar } from '../../data/taskbar'
 
 const props = defineProps({
 
@@ -38,13 +40,17 @@ const emit = defineEmits([
 | LANGUAGE
 |--------------------------------------------------------------------------
 */
+/*
+|--------------------------------------------------------------------------
+| CHANGE LANGUAGE
+|--------------------------------------------------------------------------
+*/
 
-const {
-    language,
-    t,
-    changeLanguage
-} = useLanguage()
+const { locale, t } = useI18n()
 
+const changeLanguage = () => {
+    locale.value = locale.value === 'es' ? 'en' : 'es'
+}
 
 /*
 |--------------------------------------------------------------------------
@@ -67,15 +73,10 @@ const { currentTime } = useClock({
 const windowIcons = {
 
     terminal: Terminal,
-
     network: Network,
-
     linux: Server,
-
     projects: FolderGit2,
-
     cv: FileText,
-
     about: Monitor
 
 }
@@ -99,23 +100,17 @@ const getWindowTitle = (window) => {
     const titles = {
 
         terminal: 'terminal',
-
         network: 'network',
-
         linux: 'linux',
-
         projects: 'projects',
-
         cv: 'cv',
-
         about: 'about'
 
     }
 
-    return t(titles[window.type] || window.type)
+    return t(taskBar.toSorted((a, b) => a.title.localeCompare(b.title))[0]?.title || window.type)
 
 }
-
 
 </script>
 
@@ -131,7 +126,7 @@ const getWindowTitle = (window) => {
         |--------------------------------------------------------------------------
         -->
 
-        <button class="taskbar-start" type="button" :title="t('startMenu')" @click="emit('toggle-menu')">
+        <button class="taskbar-start" type="button" :title="t('taskbar.start')" @click="emit('toggle-menu')">
 
             <Menu :size="19" />
 
@@ -179,18 +174,17 @@ const getWindowTitle = (window) => {
             | LANGUAGE
             |--------------------------------------------------------------------------
             -->
-
-            <button class="change-language" type="button" :title="language === 'ES'
-                    ? t('changeToEnglish')
-                    : t('changeToSpanish')
+            <button class="change-language" type="button" :title="locale === 'es'
+                ? t('en')
+                : t('es')
                 " @click="changeLanguage">
 
                 <Languages :size="17" class="language-icon" />
 
                 <Transition name="language-switch" mode="out-in">
 
-                    <span :key="language" class="language-label">
-                        {{ language }}
+                    <span :key="locale" class="language-label">
+                        {{ locale.toUpperCase() }}
                     </span>
 
                 </Transition>
@@ -209,7 +203,10 @@ const getWindowTitle = (window) => {
                 <span class="status-dot"></span>
 
                 <span class="network-label">
-                    {{ t('online') }}
+                    {{ t(locale === 'es'
+                        ? 'taskbar.online'
+                        : 'taskbar.offline'
+                    ) }}
                 </span>
 
             </span>
@@ -232,7 +229,7 @@ const getWindowTitle = (window) => {
             |--------------------------------------------------------------------------
             -->
 
-            <button class="taskbar-power" type="button" :title="t('shutdown')" @click="emit('power')">
+            <button class="taskbar-power" type="button" :title="t('taskbar.shutdown')" @click="emit('power')">
 
                 <Power :size="17" />
 
@@ -390,9 +387,7 @@ const getWindowTitle = (window) => {
 
 
 .taskbar-apps::-webkit-scrollbar {
-
     display: none;
-
 }
 
 
@@ -416,7 +411,6 @@ const getWindowTitle = (window) => {
     padding: 0 10px;
 
     border: 1px solid transparent;
-
     border-radius: 7px;
 
     background: transparent;
@@ -639,7 +633,6 @@ const getWindowTitle = (window) => {
 .taskbar-system {
 
     display: flex;
-
     align-items: center;
 
     gap: 12px;
@@ -662,10 +655,10 @@ const getWindowTitle = (window) => {
     position: relative;
 
     height: 34px;
+
     min-width: 48px;
 
     display: flex;
-
     align-items: center;
     justify-content: center;
 
@@ -674,7 +667,6 @@ const getWindowTitle = (window) => {
     padding: 0 8px;
 
     border: 1px solid transparent;
-
     border-radius: 7px;
 
     background: transparent;
@@ -800,7 +792,6 @@ const getWindowTitle = (window) => {
 .network-status {
 
     display: flex;
-
     align-items: center;
 
     gap: 5px;
@@ -909,7 +900,6 @@ const getWindowTitle = (window) => {
     place-items: center;
 
     border: 1px solid transparent;
-
     border-radius: 7px;
 
     background: transparent;

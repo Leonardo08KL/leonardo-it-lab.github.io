@@ -1,0 +1,32 @@
+{
+    "desktop": {
+        "about": "Acerca de mí",
+        "cv": "Currículum",
+        "personal": "Personal",
+        "projects": "Proyectos",
+        "skills": "Habilidades",
+        "linux": "Laboratorio Linux",
+        "terminal": "Terminal",
+        "network": "Laboratorio de Red",
+        "hardware": "Hardware"
+    },
+    "taskbar": {
+        "language": "Idioma",
+        "clock": "Reloj",
+        "online": "En línea",
+        "offline": "Desconectado",
+        "shutdown": "Apagar",
+        "start": "Inicio"
+    },
+    "appDescription": {
+        "about": "Sobre Leonardo",
+        "cv": "Currículum profesional",
+        "personal": "Información personal",
+        "projects": "Proyectos de desarrollo",
+        "skills": "Habilidades y conocimientos",
+        "linux": "Laboratorio de Linux",
+        "terminal": "Terminal de comandos",
+        "network": "Laboratorio de redes",
+        "hardware": "Soporte y mantenimiento"
+    }
+}

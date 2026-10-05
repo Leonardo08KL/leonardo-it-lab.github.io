@@ -1,5 +1,6 @@
 <script setup>
 import { ref, onMounted } from 'vue'
+import { useI18n } from 'vue-i18n'
 
 import TopBar from './TopBar.vue'
 import StartMenu from './StartMenu.vue'
@@ -13,6 +14,8 @@ import { useApi } from '../../composables/useApi'
 import { windowDefinitions } from '../../data/windowDefinitions'
 import { desktopIcons } from '../../data/desktopIcons'
 import { windowComponents } from '../../data/windowComponents'
+
+const { t } = useI18n()
 
 const startMenu = ref(false)
 const selectedIcon = ref(null)
@@ -91,7 +94,7 @@ const handlePower = () => {
 
             <div class="desktop-icons">
 
-                <DesktopIcon v-for="item in desktopIcons" :key="item.type" :type="item.type" :title="item.title"
+                <DesktopIcon v-for="item in desktopIcons" :key="item.type" :type="item.type" :title="t(item.title)"
                     :icon="item.icon" :selected="selectedIcon === item.type" @select="handleSelectIcon"
                     @open="handleOpenIcon" />
 

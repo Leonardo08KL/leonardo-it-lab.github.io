@@ -13,21 +13,21 @@ export const windowDefinitions = {
 
     about: {
         type: 'about',
-        title: 'About',
+        title: 'desktop.about',
         icon: User,
-        width: 700,
-        height: 950
+        width: 650,
+        height: 750
     },
     cv: {
         type: 'cv',
-        title: 'CV',
+        title: 'desktop.cv',
         icon: FileText,
         width: 700,
         height: 600
     },
     terminal: {
         type: 'terminal',
-        title: 'Terminal',
+        title: 'desktop.terminal',
         icon: Terminal,
         width: 700,
         height: 450
@@ -35,7 +35,7 @@ export const windowDefinitions = {
 
     network: {
         type: 'network',
-        title: 'Network Lab',
+        title: 'desktop.network',
         icon: Network,
         width: 800,
         height: 500
@@ -43,7 +43,7 @@ export const windowDefinitions = {
 
     linux: {
         type: 'linux',
-        title: 'Linux Lab',
+        title: 'desktop.linux',
         icon: Server,
         width: 750,
         height: 500
@@ -51,7 +51,7 @@ export const windowDefinitions = {
 
     projects: {
         type: 'projects',
-        title: 'Projects',
+        title: 'desktop.projects',
         icon: FolderGit2,
         width: 800,
         height: 550
@@ -59,7 +59,7 @@ export const windowDefinitions = {
 
     skills: {
         type: 'skills',
-        title: 'Skills',
+        title: 'desktop.skills',
         icon: Code2,
         width: 700,
         height: 500
@@ -67,7 +67,7 @@ export const windowDefinitions = {
 
     hardware: {
         type: 'hardware',
-        title: 'Hardware',
+        title: 'desktop.hardware',
         icon: Cpu,
         width: 700,
         height: 500
