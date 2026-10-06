@@ -58,6 +58,65 @@
 
     pointer-events: none;
 }
+
+/* =========================================
+   DESKTOP ICONS
+   ========================================= */
+
+.desktop-icons {
+    position: absolute;
+
+    top: 20px;
+    left: 18px;
+
+    /*
+     * Dejamos espacio para que los iconos
+     * utilicen toda la altura disponible.
+     */
+    right: 18px;
+    bottom: 20px;
+
+    z-index: 2;
+
+    display: grid;
+
+    /*
+     * Los iconos se llenan verticalmente.
+     * Cuando ya no caben, crean otra columna.
+     */
+    grid-auto-flow: column;
+
+    /*
+     * Altura de cada icono.
+     *
+     * Ajusta 86px según el tamaño real
+     * de tu DesktopIcon.
+     */
+    grid-template-rows: repeat(auto-fill, 86px);
+
+    /*
+     * Ancho de cada columna.
+     */
+    grid-auto-columns: 86px;
+
+    /*
+     * Separación vertical y horizontal.
+     */
+    column-gap: 10px;
+    row-gap: 8px;
+
+    /*
+     * Evita que los iconos se salgan
+     * horizontalmente del área.
+     */
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    /*
+     * Scroll horizontal discreto.
+     */
+    scrollbar-width: thin;
+}
 </style>
 
 <script setup>

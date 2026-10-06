@@ -141,12 +141,12 @@ const windowStyle = computed(() => {
     return {
         width:
             typeof props.width === 'number'
-                ? `${props.width}px`
+                ? `${props.width}%`
                 : props.width,
 
         height:
             typeof props.height === 'number'
-                ? `${props.height}px`
+                ? `${props.height}%`
                 : props.height,
 
         zIndex: props.window.zIndex,

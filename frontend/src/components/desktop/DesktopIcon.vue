@@ -3,20 +3,7 @@
    DESKTOP ICONS
 ========================================= */
 
-.desktop-icons {
-    position: absolute;
 
-    top: 20px;
-    left: 18px;
-
-    z-index: 2;
-
-    display: grid;
-
-    grid-template-columns: 86px;
-
-    gap: 8px;
-}
 
 .desktop-icon {
     width: 82px;
