@@ -98,8 +98,8 @@ const props = defineProps({
     },
 
     icon: {
-        type: Object,
-        default: null
+        type: [Object, Function],
+        required: null
     },
 
     maximized: {

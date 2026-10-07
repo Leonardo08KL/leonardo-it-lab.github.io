@@ -96,20 +96,18 @@ const getWindowIcon = (type) => {
 */
 
 const getWindowTitle = (window) => {
-
     const titles = {
-
         terminal: 'terminal',
         network: 'network',
         linux: 'linux',
         projects: 'projects',
         cv: 'cv',
         about: 'about'
-
     }
 
-    return t(taskBar.toSorted((a, b) => a.title.localeCompare(b.title))[0]?.title || window.type)
+    const titleKey = titles[window.type] || window.type
 
+    return t(`desktop.${titleKey}`)
 }
 
 </script>

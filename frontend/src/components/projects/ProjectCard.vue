@@ -44,10 +44,16 @@ const changeLanguage = () => {
             <span class="project-status">
                 {{ t(project.status) || 'Completed' }}
             </span>
+            <a v-if="project.github" :href="project.github" target="_blank" rel="noopener noreferrer"
+                class="project-button">
+                GitHub
+            </a>
 
-            <button type="button" @click="emit('open', project)">
+            <a v-if="project.demo" :href="project.demo" target="_blank" rel="noopener noreferrer"
+                class="project-button primary">
                 Ver proyecto
-            </button>
+            </a>
+
         </div>
     </article>
 </template>
@@ -151,19 +157,21 @@ const changeLanguage = () => {
     font-size: 11px;
 }
 
-.project-footer button {
+.project-button {
+    display: inline-block;
     padding: 6px 10px;
-
     border: 1px solid #334155;
     border-radius: 5px;
-
     background: #1e293b;
     color: #cbd5e1;
-
     cursor: pointer;
+    text-decoration: none;
+    font-size: 13px;
+    transition: background 0.2s ease, border-color 0.2s ease;
 }
 
-.project-footer button:hover {
+.project-button:hover {
     background: #334155;
+    border-color: #475569;
 }
 </style>

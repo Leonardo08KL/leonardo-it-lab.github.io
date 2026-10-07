@@ -72,7 +72,7 @@ const getStatusLabel = (status) => {
 
 
             <!-- SYSTEM -->
-            <span class="status-item system-status" :class="`status-${apiStatus}`">
+            <!-- <span class="status-item system-status" :class="`status-${apiStatus}`">
                 <span class="status-indicator"></span>
 
                 <span class="status-label">
@@ -82,7 +82,7 @@ const getStatusLabel = (status) => {
                 <span class="status-value">
                     {{ getStatusLabel(apiStatus) }}
                 </span>
-            </span>
+            </span> -->
 
 
             <!-- USER -->

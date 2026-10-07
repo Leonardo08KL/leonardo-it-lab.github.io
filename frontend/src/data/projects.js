@@ -20,7 +20,9 @@ export const projects = [
             'HTML',
             'CSS'
         ],
-        status: 'projects.status.inDevelopment'
+        status: 'projects.status.inDevelopment',
+        github: 'https://github.com/Leonardo08KL/leonardo-it-lab.github.io',
+        demo: 'https://leonardo08kl.github.io/leonardo-it-lab.github.io/'
     },
 
     {
@@ -36,52 +38,54 @@ export const projects = [
             'HTTP',
             'Networking'
         ],
-        status: 'projects.status.completed'
+        status: 'projects.status.completed',
+        github: 'https://github.com/Leonardo08KL/leonardo-it-lab.github.io',
+        demo: 'https://leonardo08kl.github.io/leonardo-it-lab.github.io/'
     },
 
-    {
-        id: 3,
-        name: 'projects.items.linuxServer.name',
-        category: 'projects.items.linuxServer.category',
-        icon: ProjectorIcon,
-        description: 'projects.items.linuxServer.description',
-        technologies: [
-            'Linux',
-            'Bash',
-            'SSH',
-            'Networking',
-            'Server Administration'
-        ],
-        status: 'projects.status.inDevelopment'
-    },
+    // {
+    //     id: 3,
+    //     name: 'projects.items.linuxServer.name',
+    //     category: 'projects.items.linuxServer.category',
+    //     icon: ProjectorIcon,
+    //     description: 'projects.items.linuxServer.description',
+    //     technologies: [
+    //         'Linux',
+    //         'Bash',
+    //         'SSH',
+    //         'Networking',
+    //         'Server Administration'
+    //     ],
+    //     status: 'projects.status.inDevelopment'
+    // },
 
-    {
-        id: 4,
-        name: 'projects.items.mediaServer.name',
-        category: 'projects.items.mediaServer.category',
-        icon: ProjectorIcon,
-        description: 'projects.items.mediaServer.description',
-        technologies: [
-            'Linux',
-            'Storage',
-            'Networking',
-            'Server'
-        ],
-        status: 'projects.status.planned'
-    },
+    // {
+    //     id: 4,
+    //     name: 'projects.items.mediaServer.name',
+    //     category: 'projects.items.mediaServer.category',
+    //     icon: ProjectorIcon,
+    //     description: 'projects.items.mediaServer.description',
+    //     technologies: [
+    //         'Linux',
+    //         'Storage',
+    //         'Networking',
+    //         'Server'
+    //     ],
+    //     status: 'projects.status.planned'
+    // },
 
-    {
-        id: 5,
-        name: 'projects.items.itSupport.name',
-        category: 'projects.items.itSupport.category',
-        icon: ProjectorIcon,
-        description: 'projects.items.itSupport.description',
-        technologies: [
-            'Hardware',
-            'Windows',
-            'Linux',
-            'Troubleshooting'
-        ],
-        status: 'projects.status.planned'
-    }
+    // {
+    //     id: 5,
+    //     name: 'projects.items.itSupport.name',
+    //     category: 'projects.items.itSupport.category',
+    //     icon: ProjectorIcon,
+    //     description: 'projects.items.itSupport.description',
+    //     technologies: [
+    //         'Hardware',
+    //         'Windows',
+    //         'Linux',
+    //         'Troubleshooting'
+    //     ],
+    //     status: 'projects.status.planned'
+    // }
 ]
