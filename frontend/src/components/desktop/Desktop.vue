@@ -7,7 +7,11 @@
     position: relative;
 
     width: 100%;
+    /* Compatibilidad con navegadores anteriores */
     height: 100vh;
+
+    /* Altura visible dinámica en Chrome móvil */
+    height: 100dvh;
 
     margin: 0;
     padding: 0;
